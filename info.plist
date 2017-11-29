@@ -1,0 +1,2385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>se.gothager.peter.bluepages</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>04A33F4D-BE17-437E-91F9-795AC11D5063</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>254BDD18-F410-490C-9059-DA5460C59AEC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>0793B413-AB4F-4BDC-B127-6F1D1BC3C9F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>26F35AFE-81A7-4119-9C17-2BD523D67769</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D196B98-2F13-4FD4-8074-8C18245874D1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>0CC459FE-3CA5-4D22-AAFD-E570A74EA74B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FFD6E742-58D6-4854-AB9F-93A9E5878FF8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>14FD2F09-C369-4A20-BD18-51C0813236BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D20EC5B1-6B5F-4ED8-9127-7D7E611DEB3D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>254BDD18-F410-490C-9059-DA5460C59AEC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7226A890-BEE5-4E52-AB20-15F0D273A9AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DFD5201F-DC22-4027-ABDF-BE46A6445AFA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>838AFC31-B5AD-4535-8A62-85DB9EC4AEE3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CC1A9786-0075-44E1-B1BF-AA31707926EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E57932A3-0B4E-417F-B5E3-86EB3C8DBB5C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>550EF785-36C2-4C84-A82D-908E45AF895E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0793B413-AB4F-4BDC-B127-6F1D1BC3C9F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2904724D-0CC6-4727-BDE5-774D36F36D8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DFDB01CC-64CF-49E2-BC6C-11367A456465</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D45634AC-8C77-4494-BB10-3733A2C52B8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3FD6BE29-EC26-4C15-B351-6E405F3FC902</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>84854DAA-C5E7-496F-A46A-D6FAB1ABA3C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>412532E6-00AB-41F6-97B5-86360F12305B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CC459FE-3CA5-4D22-AAFD-E570A74EA74B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4EA1458F-9926-423F-A921-C35BA944E31B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>412532E6-00AB-41F6-97B5-86360F12305B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>550EF785-36C2-4C84-A82D-908E45AF895E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3F2AD44-E9BA-4882-B254-898211BBCB9D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>582E8307-F0AC-4E4D-9FC4-A8055BE9932E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60F6DB3C-813A-4D20-B2E6-7C92F248DE7D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6D196B98-2F13-4FD4-8074-8C18245874D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D038B836-4054-498A-85A6-47E16FAD3547</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>71AE6DFA-A813-402A-AC37-BF370A8CE8AA</key>
+		<array/>
+		<key>7226A890-BEE5-4E52-AB20-15F0D273A9AD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9410FAFD-5216-407A-BFAA-0765291F892E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE692966-FBFA-4CBD-BC5B-B8C12900E2DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>838AFC31-B5AD-4535-8A62-85DB9EC4AEE3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60F6DB3C-813A-4D20-B2E6-7C92F248DE7D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>84854DAA-C5E7-496F-A46A-D6FAB1ABA3C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>04A33F4D-BE17-437E-91F9-795AC11D5063</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB3D899E-BEDB-4BAF-AEAC-0869A7CEF136</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open profile in default browser</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Send mail using IBM Verse</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>582E8307-F0AC-4E4D-9FC4-A8055BE9932E</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Paste email address into front most app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy email address to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>86F41AD5-296E-4B30-8A2C-600C9ED36920</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC48166F-90CC-4DFC-A37B-64BD610F141F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99075CE0-8BD2-4E35-9812-40E99DE4E532</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>26F35AFE-81A7-4119-9C17-2BD523D67769</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BE692966-FBFA-4CBD-BC5B-B8C12900E2DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7A376F0-4982-4A5F-AA88-7E74373839C0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C087EF04-763E-4673-BE1E-0F6827F3BA24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3FD6BE29-EC26-4C15-B351-6E405F3FC902</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>78B7BBBB-07F4-4491-8E36-591D14B3AF78</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CC1A9786-0075-44E1-B1BF-AA31707926EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3F2AD44-E9BA-4882-B254-898211BBCB9D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D038B836-4054-498A-85A6-47E16FAD3547</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4EA1458F-9926-423F-A921-C35BA944E31B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D20EC5B1-6B5F-4ED8-9127-7D7E611DEB3D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D45634AC-8C77-4494-BB10-3733A2C52B8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EBE5BD8-9F35-4FAA-8EEA-474E957D44A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D7A376F0-4982-4A5F-AA88-7E74373839C0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5FC3A13D-971E-4922-87ED-6982C682DD4E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DC48166F-90CC-4DFC-A37B-64BD610F141F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DFD5201F-DC22-4027-ABDF-BE46A6445AFA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>71AE6DFA-A813-402A-AC37-BF370A8CE8AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DFDB01CC-64CF-49E2-BC6C-11367A456465</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CE6F6470-C3C9-419C-86CF-4BB50F16A9EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E57932A3-0B4E-417F-B5E3-86EB3C8DBB5C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>581A9587-B917-458E-8F1F-DF5425B7930A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F3F2AD44-E9BA-4882-B254-898211BBCB9D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2904724D-0CC6-4727-BDE5-774D36F36D8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FB3D899E-BEDB-4BAF-AEAC-0869A7CEF136</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99075CE0-8BD2-4E35-9812-40E99DE4E532</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FFD6E742-58D6-4854-AB9F-93A9E5878FF8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Peter Göthager</string>
+	<key>description</key>
+	<string>Search Bluepages</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Bluepages</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9410FAFD-5216-407A-BFAA-0765291F892E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>browser</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>7226A890-BEE5-4E52-AB20-15F0D273A9AD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys, re
+
+query = sys.argv[1]
+match = re.search(r'[\w\.-]+@[\w\.-]+', query)
+resp = "";
+if query.find("/") &gt; -1 or match == None:
+	resp = query
+else:
+	resp = match.group(0)
+
+sys.stdout.write(resp)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3FD6BE29-EC26-4C15-B351-6E405F3FC902</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>bp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>python bp_search.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search Bluepages</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>84854DAA-C5E7-496F-A46A-D6FAB1ABA3C5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>11</integer>
+				<key>hotmod</key>
+				<integer>393216</integer>
+				<key>hotstring</key>
+				<string>B</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C087EF04-763E-4673-BE1E-0F6827F3BA24</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+import sys
+import os
+sys.path.append('./pushbullet')
+sys.path.append('./websocket')
+from pushbullet import Pushbullet
+from workflow import Workflow
+
+log = None
+
+def main(wf):
+	e2e = wf.stored_data('bp-e2e')
+	if e2e != "False":
+		pb = Pushbullet(wf.stored_data('bp-api'), e2e)
+		log.debug("Sent SMS with encryption")
+	else:
+		pb = Pushbullet(wf.stored_data('bp-api'))
+		log.debug("Sent SMS without encryption")
+
+	device = pb.get_device(wf.stored_data('bp-device'))
+	number = os.getenv('number')
+
+
+	push = pb.push_sms(device, number, sys.argv[1])
+
+
+if __name__ == '__main__':
+	# Create a global `Workflow` object
+	wf = Workflow()
+	log = wf.logger
+	# Call your entry function via `Workflow.run()` to enable its helper
+	# functions, like exception catching, ARGV normalization, magic
+	# arguments etc.
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CE6F6470-C3C9-419C-86CF-4BB50F16A9EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait</string>
+				<key>script</key>
+				<string>python bp_item.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Checking status...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>254BDD18-F410-490C-9059-DA5460C59AEC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+
+from workflow import Workflow, web
+
+def main(wf):
+	# https://github.com/deanishe/alfred-workflow
+	# http://www.deanishe.net/alfred-workflow/
+	args = wf.args
+	query = sys.argv[1]
+	web.get(query)
+
+
+if __name__ == '__main__':
+	wf = Workflow()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>71AE6DFA-A813-402A-AC37-BF370A8CE8AA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>item</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>04A33F4D-BE17-437E-91F9-795AC11D5063</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>urlcall</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>DFD5201F-DC22-4027-ABDF-BE46A6445AFA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>pushbullet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>DFDB01CC-64CF-49E2-BC6C-11367A456465</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set targetMessage to item 1 of argv
+  set targetBuddyPhone to (system attribute "number")
+  tell application "System Events"
+    tell application "Messages" to activate
+    tell process "Messages"
+      click menu item "New Message" of menu "file" of menu bar 1
+      set input to targetMessage as text
+      delay 1
+      keystroke targetBuddyPhone
+      keystroke return
+    end tell
+  end tell
+
+  tell application "System Events" to click text area 1 of scroll area 4 of splitter group 1 of window "Messages" of application process "Messages"
+  set the clipboard to targetMessage
+  tell application "System Events" to keystroke "v" using command down
+  try
+	tell application "System Events" to keystroke return
+  on error errMsg
+	return "Error: Make sure that you have paired iPhone and Mac and enabled 'Send as SMS' in Messages preferences on your iPhone"
+  end try
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2EBE5BD8-9F35-4FAA-8EEA-474E957D44A8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>text-to-send-bp</string>
+				<key>subtext</key>
+				<string>Type the message that you wish to send to {var:number}</string>
+				<key>text</key>
+				<string>Message</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2904724D-0CC6-4727-BDE5-774D36F36D8E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>pushbullet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>CC1A9786-0075-44E1-B1BF-AA31707926EE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>paste</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>838AFC31-B5AD-4535-8A62-85DB9EC4AEE3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>imessage</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>D45634AC-8C77-4494-BB10-3733A2C52B8E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>number</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F3F2AD44-E9BA-4882-B254-898211BBCB9D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>save</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>E57932A3-0B4E-417F-B5E3-86EB3C8DBB5C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>imessage</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>550EF785-36C2-4C84-A82D-908E45AF895E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>python bp_vcard.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Retrieving additional profile information</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>581A9587-B917-458E-8F1F-DF5425B7930A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>0793B413-AB4F-4BDC-B127-6F1D1BC3C9F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set tout to 5set t to 0repeat while t &lt; tout	tell application "System Events"		set facetime_running to count (every process whose name is "FaceTime")	end tell	if facetime_running is 1 then		try			tell application "System Events"
+				set frontWindow to front window of application process "FaceTime"				delay .6 # needed to avoid weird flickering stuff. Try increasing if you still see it on your system				click button "Call" of frontWindow				exit repeat			end tell		end try	else		delay 0.1	end if	set t to t + 0.1end repeat
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>5FC3A13D-971E-4922-87ED-6982C682DD4E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open 'tel://{query}'</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BE692966-FBFA-4CBD-BC5B-B8C12900E2DB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:skip_confirm}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>True</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>D7A376F0-4982-4A5F-AA88-7E74373839C0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>facetime</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+import json
+import urllib
+from workflow import Workflow
+
+def main(wf):
+	# https://github.com/deanishe/alfred-workflow
+	# http://www.deanishe.net/alfred-workflow/
+	args = wf.args
+	query = sys.argv[1]
+
+	#Convert to object
+	item = json.loads(query)
+
+	#Set URL and pass
+	url = "http://w3.ibm.com/newbp/profile.html?uid="+item["uid"]
+	sys.stdout.write (url)
+
+if __name__ == '__main__':
+	wf = Workflow()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FB3D899E-BEDB-4BAF-AEAC-0869A7CEF136</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>99075CE0-8BD2-4E35-9812-40E99DE4E532</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+import json
+import urllib
+from workflow import Workflow
+
+def main(wf):
+	# https://github.com/deanishe/alfred-workflow
+	# http://www.deanishe.net/alfred-workflow/
+	args = wf.args
+	query = sys.argv[1]
+
+	#Convert to object
+	item = json.loads(query)
+
+	#Set URL and pass
+	url = "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"])
+	sys.stdout.write (url)
+
+if __name__ == '__main__':
+	wf = Workflow()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>60F6DB3C-813A-4D20-B2E6-7C92F248DE7D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Content has been stored in the Clipboard</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+import json
+import urllib
+from workflow import Workflow
+
+def main(wf):
+	# https://github.com/deanishe/alfred-workflow
+	# http://www.deanishe.net/alfred-workflow/
+	args = wf.args
+	query = sys.argv[1]
+
+	#Convert to object
+	item = json.loads(query)
+
+	sys.stdout.write (item["preferredIdentity"])
+
+if __name__ == '__main__':
+	wf = Workflow()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>582E8307-F0AC-4E4D-9FC4-A8055BE9932E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Bluepages</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>78B7BBBB-07F4-4491-8E36-591D14B3AF78</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>26F35AFE-81A7-4119-9C17-2BD523D67769</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+import json
+import urllib
+from workflow import Workflow
+
+def main(wf):
+	# https://github.com/deanishe/alfred-workflow
+	# http://www.deanishe.net/alfred-workflow/
+	args = wf.args
+	query = sys.argv[1]
+
+	#Convert to object
+	item = json.loads(query)
+
+	sys.stdout.write (item["preferredIdentity"])
+
+if __name__ == '__main__':
+	wf = Workflow()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+wf = Workflow()
+
+wf.clear_data(lambda f: f.endswith('.cpickle'))
+
+sys.stdout.write("API config has been cleared")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DC48166F-90CC-4DFC-A37B-64BD610F141F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>reg-bp-api-clear</string>
+				<key>subtext</key>
+				<string>Will remove Pushbullet API settings</string>
+				<key>text</key>
+				<string>Bluepages clear API settings</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>86F41AD5-296E-4B30-8A2C-600C9ED36920</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+api = sys.argv[1]
+
+wf = Workflow()
+wf.store_data('bp-api', api)
+
+sys.stdout.write("Pushbullet API has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6D196B98-2F13-4FD4-8074-8C18245874D1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>reg-bp-api</string>
+				<key>subtext</key>
+				<string>Register your Pushbullet API key in order to send SMS messages</string>
+				<key>text</key>
+				<string>Bluepages set Pushbullet API key</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Bluepages</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D038B836-4054-498A-85A6-47E16FAD3547</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+import os
+from workflow import Workflow
+
+e2e = sys.argv[1]
+device = os.environ['device']
+
+wf = Workflow()
+wf.store_data('bp-device', device)
+wf.store_data('bp-e2e', e2e)
+
+sys.stdout.write("Device has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FFD6E742-58D6-4854-AB9F-93A9E5878FF8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+import sys
+from workflow import Workflow, ICON_WARNING, ICON_SETTINGS
+
+
+def main(wf):
+	text = sys.argv[1]
+
+	wf.add_item(title="Store: '"+text+"'", subtitle="Enter your key in the field above", arg=text, valid='True', icon=ICON_SETTINGS)
+	# Skip encryption
+	wf.add_item(title="I don't want encryption", subtitle="If not enabled the communication to Pushbullet/your phone will not be encrypted!", arg="False", valid=True, icon=ICON_WARNING)
+	wf.send_feedback()
+
+if __name__ == '__main__':
+	# Create a global `Workflow` object
+	wf = Workflow()
+	# Call your entry function via `Workflow.run()` to enable its helper
+	# functions, like exception catching, ARGV normalization, magic
+	# arguments etc.
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Leave blank to skip encryption</string>
+				<key>title</key>
+				<string>Enter your end to end encryption key</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0CC459FE-3CA5-4D22-AAFD-E570A74EA74B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait for devices</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+import sys
+sys.path.append('./pushbullet')
+sys.path.append('./websocket')
+from pushbullet import Pushbullet
+from workflow import Workflow, ICON_ERROR
+
+
+def main(wf):
+	#Get API
+	api = wf.stored_data('bp-api')
+
+	pb = Pushbullet(api)
+
+	devices = pb.devices
+
+	foundHasSMS = False
+
+	for index in range(len(devices)):
+		if vars(devices[index]).get("has_sms"):
+			wf.add_item(title=vars(devices[index]).get("nickname"), arg=vars(devices[index]).get("nickname"), valid='True', icon='sms.png')
+			foundHasSMS = True
+
+	if foundHasSMS == False:
+		wf.add_item(title="No valid phone is registered in Pushbullet", subtitle="Only available for Android devices. Make sure that SMS sync is enabled", valid=False, icon=ICON_ERROR);
+
+	wf.send_feedback()
+
+if __name__ == '__main__':
+	# Create a global `Workflow` object
+	wf = Workflow()
+	# Call your entry function via `Workflow.run()` to enable its helper
+	# functions, like exception catching, ARGV normalization, magic
+	# arguments etc.
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Select sending device</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4EA1458F-9926-423F-A921-C35BA944E31B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+imessage = sys.argv[1]
+
+wf = Workflow()
+wf.store_data('bp-imessage', imessage)
+
+sys.stdout.write("Messages settings has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D20EC5B1-6B5F-4ED8-9127-7D7E611DEB3D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>reg-bp-imessage</string>
+				<key>subtext</key>
+				<string>Enter true or false to enable/disable Messages to send text</string>
+				<key>text</key>
+				<string>Bluepages enable SMS via OSX Messages</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>14FD2F09-C369-4A20-BD18-51C0813236BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>device</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>412532E6-00AB-41F6-97B5-86360F12305B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Search Bluepages using "bp" as keyword.
+Use cmd/alt/ctrl to get alternative options on the first response.
+	- cmd = Directly open the Bluepages profile in a browser
+	- alt = Send an email to the selected profile using IBM Verse
+	- ctrl = Paste  email address of the profile into front most app and copy email to clipboard
+	- shift = Copy email address to clipboard
+
+If you have the Sametime client installed you will be presented with additional options after selecting a profile.
+	- Open chat if online
+	- Call office or mobile using Sametime Unified Telephony (w3 help http://ibm.biz/sutinfo )
+
+You can also update the workflow with an Hotkey to search Bluepages on any selected text.</string>
+	<key>uidata</key>
+	<dict>
+		<key>04A33F4D-BE17-437E-91F9-795AC11D5063</key>
+		<dict>
+			<key>xpos</key>
+			<integer>810</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>0793B413-AB4F-4BDC-B127-6F1D1BC3C9F1</key>
+		<dict>
+			<key>note</key>
+			<string>Copy</string>
+			<key>xpos</key>
+			<integer>1070</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
+		<key>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</key>
+		<dict>
+			<key>note</key>
+			<string>Use with your Pushbullet API https://www.pushbullet.com/#settings/account to send text messages via your Pushbullet phone app</string>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>1410</integer>
+		</dict>
+		<key>0CC459FE-3CA5-4D22-AAFD-E570A74EA74B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>830</integer>
+			<key>ypos</key>
+			<integer>1580</integer>
+		</dict>
+		<key>14FD2F09-C369-4A20-BD18-51C0813236BD</key>
+		<dict>
+			<key>note</key>
+			<string>Use with your Pushbullet API https://www.pushbullet.com/#settings/account to send text messages via your Pushbullet phone app</string>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>1610</integer>
+		</dict>
+		<key>254BDD18-F410-490C-9059-DA5460C59AEC</key>
+		<dict>
+			<key>note</key>
+			<string>If Sametime is running the availability of the person is verified. Building list of possible actions</string>
+			<key>xpos</key>
+			<integer>910</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>26F35AFE-81A7-4119-9C17-2BD523D67769</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1470</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
+		<key>2904724D-0CC6-4727-BDE5-774D36F36D8E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1810</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
+		<key>2EBE5BD8-9F35-4FAA-8EEA-474E957D44A8</key>
+		<dict>
+			<key>note</key>
+			<string>For sending text via iMessage. Requires pairing with iPhone and enabled send SMS in the Messages preferences of iPhone</string>
+			<key>xpos</key>
+			<integer>2110</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
+		<key>3FD6BE29-EC26-4C15-B351-6E405F3FC902</key>
+		<dict>
+			<key>note</key>
+			<string>Extract email. If none is found, use input</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>412532E6-00AB-41F6-97B5-86360F12305B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>710</integer>
+			<key>ypos</key>
+			<integer>1610</integer>
+		</dict>
+		<key>4EA1458F-9926-423F-A921-C35BA944E31B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>1580</integer>
+		</dict>
+		<key>550EF785-36C2-4C84-A82D-908E45AF895E</key>
+		<dict>
+			<key>note</key>
+			<string>iMessage (send text)</string>
+			<key>xpos</key>
+			<integer>1530</integer>
+			<key>ypos</key>
+			<integer>360</integer>
+		</dict>
+		<key>581A9587-B917-458E-8F1F-DF5425B7930A</key>
+		<dict>
+			<key>note</key>
+			<string>Searches faces based on hotkey or free text with "bp" keyword. Preview URL is available using "cmd+y"</string>
+			<key>xpos</key>
+			<integer>1280</integer>
+			<key>ypos</key>
+			<integer>380</integer>
+		</dict>
+		<key>582E8307-F0AC-4E4D-9FC4-A8055BE9932E</key>
+		<dict>
+			<key>note</key>
+			<string>Hold down CTRL to paste email address into app</string>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>890</integer>
+		</dict>
+		<key>5FC3A13D-971E-4922-87ED-6982C682DD4E</key>
+		<dict>
+			<key>note</key>
+			<string>click call</string>
+			<key>xpos</key>
+			<integer>1800</integer>
+			<key>ypos</key>
+			<integer>470</integer>
+		</dict>
+		<key>60F6DB3C-813A-4D20-B2E6-7C92F248DE7D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1470</integer>
+			<key>ypos</key>
+			<integer>740</integer>
+		</dict>
+		<key>6D196B98-2F13-4FD4-8074-8C18245874D1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>1410</integer>
+		</dict>
+		<key>71AE6DFA-A813-402A-AC37-BF370A8CE8AA</key>
+		<dict>
+			<key>note</key>
+			<string>Call Sametime WebAPI</string>
+			<key>xpos</key>
+			<integer>1440</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>7226A890-BEE5-4E52-AB20-15F0D273A9AD</key>
+		<dict>
+			<key>note</key>
+			<string>Open URL</string>
+			<key>xpos</key>
+			<integer>1310</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>78B7BBBB-07F4-4491-8E36-591D14B3AF78</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1470</integer>
+			<key>ypos</key>
+			<integer>890</integer>
+		</dict>
+		<key>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</key>
+		<dict>
+			<key>note</key>
+			<string>Facetime call</string>
+			<key>xpos</key>
+			<integer>1480</integer>
+			<key>ypos</key>
+			<integer>510</integer>
+		</dict>
+		<key>838AFC31-B5AD-4535-8A62-85DB9EC4AEE3</key>
+		<dict>
+			<key>note</key>
+			<string>Paste</string>
+			<key>xpos</key>
+			<integer>1070</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>84854DAA-C5E7-496F-A46A-D6FAB1ABA3C5</key>
+		<dict>
+			<key>note</key>
+			<string>Searches faces based on hotkey or free text with "bp" keyword. Preview URL is available using "cmd+y"</string>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>86F41AD5-296E-4B30-8A2C-600C9ED36920</key>
+		<dict>
+			<key>note</key>
+			<string>Use with your Pushbullet API https://www.pushbullet.com/#settings/account to send text messages via your Pushbullet phone app</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>1180</integer>
+		</dict>
+		<key>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</key>
+		<dict>
+			<key>note</key>
+			<string>Hold down ALT to directly compose a new mail using IBM Verse</string>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>720</integer>
+		</dict>
+		<key>9410FAFD-5216-407A-BFAA-0765291F892E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1440</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>99075CE0-8BD2-4E35-9812-40E99DE4E532</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1470</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
+		<key>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</key>
+		<dict>
+			<key>note</key>
+			<string>Hold down SHIFT to copy email address ito clipboard</string>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>1060</integer>
+		</dict>
+		<key>BE692966-FBFA-4CBD-BC5B-B8C12900E2DB</key>
+		<dict>
+			<key>note</key>
+			<string>Make call button appear</string>
+			<key>xpos</key>
+			<integer>1580</integer>
+			<key>ypos</key>
+			<integer>470</integer>
+		</dict>
+		<key>C087EF04-763E-4673-BE1E-0F6827F3BA24</key>
+		<dict>
+			<key>note</key>
+			<string>Select a hotkey to be able to lookup a selection in Bluepages</string>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>C51FB516-0940-4D3F-814A-E3CC0BAC1C30</key>
+		<dict>
+			<key>note</key>
+			<string>Sets the output message</string>
+			<key>xpos</key>
+			<integer>1200</integer>
+			<key>ypos</key>
+			<integer>760</integer>
+		</dict>
+		<key>CC1A9786-0075-44E1-B1BF-AA31707926EE</key>
+		<dict>
+			<key>note</key>
+			<string>Pushbullet (send text)</string>
+			<key>xpos</key>
+			<integer>1530</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>CE6F6470-C3C9-419C-86CF-4BB50F16A9EE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>2120</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>D038B836-4054-498A-85A6-47E16FAD3547</key>
+		<dict>
+			<key>note</key>
+			<string>Sets the output message</string>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>1560</integer>
+		</dict>
+		<key>D20EC5B1-6B5F-4ED8-9127-7D7E611DEB3D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>1610</integer>
+		</dict>
+		<key>D45634AC-8C77-4494-BB10-3733A2C52B8E</key>
+		<dict>
+			<key>note</key>
+			<string>iMessage (send text)</string>
+			<key>xpos</key>
+			<integer>2010</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+		<key>D7A376F0-4982-4A5F-AA88-7E74373839C0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1720</integer>
+			<key>ypos</key>
+			<integer>500</integer>
+		</dict>
+		<key>DC48166F-90CC-4DFC-A37B-64BD610F141F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>1180</integer>
+		</dict>
+		<key>DFD5201F-DC22-4027-ABDF-BE46A6445AFA</key>
+		<dict>
+			<key>note</key>
+			<string>Call URL from backend</string>
+			<key>xpos</key>
+			<integer>1280</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>DFDB01CC-64CF-49E2-BC6C-11367A456465</key>
+		<dict>
+			<key>note</key>
+			<string>Pushbullet (send text)</string>
+			<key>xpos</key>
+			<integer>2010</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>E57932A3-0B4E-417F-B5E3-86EB3C8DBB5C</key>
+		<dict>
+			<key>note</key>
+			<string>Save</string>
+			<key>xpos</key>
+			<integer>1070</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>ED066E7E-CE51-4236-854B-076EF5B92206</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>1460</integer>
+		</dict>
+		<key>F3F2AD44-E9BA-4882-B254-898211BBCB9D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1670</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>FB3D899E-BEDB-4BAF-AEAC-0869A7CEF136</key>
+		<dict>
+			<key>note</key>
+			<string>Hold down CMD to directly open the profile in your default browser</string>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>550</integer>
+		</dict>
+		<key>FFD6E742-58D6-4854-AB9F-93A9E5878FF8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1070</integer>
+			<key>ypos</key>
+			<integer>1570</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://w3.ibm.com/newbp/profile.html?uid=031139846</string>
+</dict>
+</plist>

@@ -61,7 +61,7 @@ def main(wf):
 	add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser")
 
 	# Add mail
-	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"]), "browser", "verse.png")
+	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"]), "browser", "images/verse.png")
 
 	# Initializing params
 	phone_duplicates = False
@@ -78,7 +78,7 @@ def main(wf):
 
 			# Add chat
 			if r["status"]>0:
-				add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "st.png")
+				add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
 		except:
 			pass
 
@@ -91,51 +91,51 @@ def main(wf):
 			phone_duplicates = False
 
 		if item.get("telephone_mobile"):
-			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "mobile.png")
+			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
 			if imessage:
-				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "facetime.png")
+				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
 
 		if item.get("telephone_office") and  not phone_duplicates:
 			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "office.png")
 			if imessage:
-				add_item(wf, 'Call mobile: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "facetime.png")
+				add_item(wf, 'Call mobile: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
 	except:
 		pass
 
 	#Pushbullet
 	if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
 		if item.get("telephone_mobile"):
-			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Pushbullet', clean_number(item["telephone_mobile"], True), "pushbullet", "pushbullet.png")
+			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Pushbullet', clean_number(item["telephone_mobile"], True), "pushbullet", "images/pushbullet.png")
 		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Pushbullet', clean_number(item["telephone_office"], True), "pushbullet", "pushbullet.png")
+			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Pushbullet', clean_number(item["telephone_office"], True), "pushbullet", "images/pushbullet.png")
 
 	#iPhone SMS
 	if imessage:
 		if item.get("telephone_mobile"):
-			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "imessage.png")
+			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "images/imessage.png")
 		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Messages', clean_number(item["telephone_office"], True), "imessage", "imessage.png")
+			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Messages', clean_number(item["telephone_office"], True), "imessage", "images/imessage.png")
 
 	# Add copy email and paste
-	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "paste.png")
+	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")
 
 	# Add copy email to clipboard
-	add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"], "clipboard", "clipboard.png")
+	add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"], "clipboard", "images/clipboard.png")
 
 	# Add copy mobile to clipboard
 	try:
 		if item.get("telephone_mobile"):
-			add_item(wf, 'Copy mobile: +'+item["telephone_mobile"], 'To clipboard', clean_number(item["telephone_mobile"], True), "clipboard", "clipboard.png")
+			add_item(wf, 'Copy mobile: +'+item["telephone_mobile"], 'To clipboard', clean_number(item["telephone_mobile"], True), "clipboard", "images/clipboard.png")
 	except:
 		pass
 	# Add copy office to clipboard
 	try:
 		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Copy office: +'+item["telephone_office"], 'To clipboard', clean_number(item["telephone_office"], True), "clipboard", "clipboard.png")
+			add_item(wf, 'Copy office: +'+item["telephone_office"], 'To clipboard', clean_number(item["telephone_office"], True), "clipboard", "images/clipboard.png")
 	except:
 		pass
 
-	add_item(wf, "Save", "Store profile in Contacts", "","save", "contacts.png")
+	add_item(wf, "Save", "Store profile in Contacts", "","save", "images/contacts.png")
 
 
 	# Send output to Alfred. You can only call this once.

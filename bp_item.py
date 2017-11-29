@@ -96,7 +96,7 @@ def main(wf):
 				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
 
 		if item.get("telephone_office") and  not phone_duplicates:
-			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "office.png")
+			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
 			if imessage:
 				add_item(wf, 'Call mobile: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
 	except:

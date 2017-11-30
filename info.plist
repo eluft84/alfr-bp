@@ -1938,7 +1938,7 @@ sys.stdout.write('False' if pushbullet else 'True')</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>Enable or disable features</string>
 				<key>title</key>
 				<string>Bluepages Configuration</string>
 				<key>type</key>

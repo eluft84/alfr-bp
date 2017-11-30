@@ -254,6 +254,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE156AE2-EE2C-4284-A4AD-83D194D8A82C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>4ADD3EF7-606D-4008-9653-E2D00DFAFEDB</key>
 		<array>
@@ -752,6 +762,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>581A9587-B917-458E-8F1F-DF5425B7930A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EE156AE2-EE2C-4284-A4AD-83D194D8A82C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAF69C22-BF70-4B0E-B568-0215EE886C3F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2433,6 +2456,44 @@ sys.stdout.write("Pushbullet API has been saved")</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>url</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>EE156AE2-EE2C-4284-A4AD-83D194D8A82C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>CAF69C22-BF70-4B0E-B568-0215EE886C3F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search Bluepages using "bp" as keyword.
@@ -2768,6 +2829,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>1720</integer>
 		</dict>
+		<key>CAF69C22-BF70-4B0E-B568-0215EE886C3F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>1860</integer>
+		</dict>
 		<key>CC1A9786-0075-44E1-B1BF-AA31707926EE</key>
 		<dict>
 			<key>note</key>
@@ -2874,6 +2942,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>1380</integer>
 			<key>ypos</key>
 			<integer>1290</integer>
+		</dict>
+		<key>EE156AE2-EE2C-4284-A4AD-83D194D8A82C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>1760</integer>
 		</dict>
 		<key>F3F2AD44-E9BA-4882-B254-898211BBCB9D</key>
 		<dict>

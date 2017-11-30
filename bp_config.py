@@ -18,12 +18,13 @@ def add_item(
     aquery,
     aaction,
     aicon=None,
+    aenabled=True
     ):
 
     arg = {'alfredworkflow': {'arg': aquery,
            'variables': {'action': aaction}}}
     wf.add_item(title=atitle, subtitle=asubtitle, arg=json.dumps(arg),
-                valid='True', icon=(aicon if aicon else ''))
+                valid=aenabled, icon=(aicon if aicon else ''))
 
 
 def main(wf):
@@ -64,6 +65,12 @@ def main(wf):
     add_item(wf, 'Pushbullet '+('ENABLED' if pushbullet else 'DISABLED'),
              'Toggle Pushbullet integration (SMS using Android)', '',
              'pushbullet','images/pushbullet.png')
+    add_item(wf, 'Link to Mac@IBM forum',
+             'Ask questions or report bugs', 'https://w3-connections.ibm.com/forums/html/topic?id=efeae0bf-3d7e-48a2-8573-b31f940c111b',
+             'url')
+    add_item(wf, 'Current version: '+'{0}'.format(wf.version),
+             'Goto Github releases', 'https://github.com/nidayand/alfr-bp/releases',
+             'url')
 
     wf.send_feedback()
 

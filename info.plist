@@ -1606,7 +1606,7 @@ def main(wf):
 	item = json.loads(query)
 
 	#Set URL and pass
-	url = "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"])
+	url = "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower())
 	sys.stdout.write (url)
 
 if __name__ == '__main__':
@@ -1683,7 +1683,7 @@ def main(wf):
 	#Convert to object
 	item = json.loads(query)
 
-	sys.stdout.write (item["preferredIdentity"])
+	sys.stdout.write (item["preferredIdentity"].lower())
 
 if __name__ == '__main__':
 	wf = Workflow()
@@ -1765,7 +1765,7 @@ def main(wf):
 	#Convert to object
 	item = json.loads(query)
 
-	sys.stdout.write (item["preferredIdentity"])
+	sys.stdout.write (item["preferredIdentity"].lower())
 
 if __name__ == '__main__':
 	wf = Workflow()

@@ -62,7 +62,7 @@ def main(wf):
 	add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser")
 
 	# Add mail
-	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"]), "browser", "images/verse.png")
+	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
 
 	# Initializing params
 	phone_duplicates = False
@@ -137,7 +137,7 @@ def main(wf):
 	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")
 
 	# Add copy email to clipboard
-	add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"], "clipboard", "images/clipboard.png")
+	add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"].lower(), "clipboard", "images/clipboard.png")
 
 	# Add copy mobile to clipboard
 	try:

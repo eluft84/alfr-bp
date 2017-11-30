@@ -66,10 +66,26 @@ def main(wf):
 	# Initializing params
 	phone_duplicates = False
 	imessage = False
+	sut = True
+	facetime = False
+	pushbullet = False
 
 	#iPhone
 	if wf.stored_data('bp-imessage'):
 		imessage = wf.stored_data('bp-imessage').lower().strip() in ("yes", "true", "1", "on", "yeah")
+
+	#Sametime Unified Telephony
+	if wf.stored_data('bp-sut'):
+		sut = wf.stored_data('bp-sut').lower().strip() in ('yes', 'true', '1', 'on', 'yeah')
+
+	#FaceTime
+	if wf.stored_data('bp-facetime'):
+		facetime = wf.stored_data('bp-facetime').lower().strip() \
+			in ('yes', 'true', '1', 'on', 'yeah')
+
+	#Pushbullet
+	if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
+		pushbullet = True
 
 	try:
 		try:
@@ -90,20 +106,20 @@ def main(wf):
 		else:
 			phone_duplicates = False
 
-		if item.get("telephone_mobile"):
+		if sut and item.get("telephone_mobile"):
 			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
-			if imessage:
-				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
+		if facetime and item.get("telephone_mobile"):
+			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
 
-		if item.get("telephone_office") and  not phone_duplicates:
+		if sut and item.get("telephone_office") and  not phone_duplicates:
 			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
-			if imessage:
-				add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
+		if facetime and item.get("telephone_office") and  not phone_duplicates:
+			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
 	except:
 		pass
 
 	#Pushbullet
-	if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
+	if pushbullet:
 		if item.get("telephone_mobile"):
 			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Pushbullet', clean_number(item["telephone_mobile"], True), "pushbullet", "images/pushbullet.png")
 		if item.get("telephone_office") and not phone_duplicates:

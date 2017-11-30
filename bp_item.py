@@ -18,6 +18,7 @@ def clean_number(nbr, plus = False):
 	out = nbr.replace(" ", "")
 	out = out.replace("-", "")
 	out = out.replace(",", "")
+	out = out.replace('.', '')
 	out = out.strip()
 
 	out = re.sub(r'\([^)]*\)', '', out)

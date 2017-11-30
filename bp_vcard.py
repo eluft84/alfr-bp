@@ -68,8 +68,8 @@ def main(wf):
 
     if item.get("telephone_office"):
         j.add('tel')
-        j.contents['tel'][1].type_param='WORK'
-        j.contents['tel'][1].value=clean_number(item['telephone_office'], True)
+        j.contents['tel'][len(j.contents['tel'])-1].type_param='WORK'
+        j.contents['tel'][len(j.contents['tel'])-1].value=clean_number(item['telephone_office'], True)
 
     #t = r['content']['identity_info']['address']['business']
     #j.add('address')

@@ -97,7 +97,7 @@ def main(wf):
     with tempfile.NamedTemporaryFile(suffix='.vcf', delete=False) as \
         temp:
         temp.write(j.serialize())
-        subprocess.Popen(["open", "/Applications/Contacts.app",
+        subprocess.Popen(["open", "-a","Contacts",
                   temp.name])
 
 

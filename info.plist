@@ -1541,7 +1541,7 @@ def main(wf):
 	item = json.loads(query)
 
 	#Set URL and pass
-	url = "http://w3.ibm.com/newbp/profile.html?uid="+item["uid"]
+	url = "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]
 	sys.stdout.write (url)
 
 if __name__ == '__main__':

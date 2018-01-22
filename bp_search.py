@@ -5,10 +5,29 @@ import sys
 import os
 import json
 import urllib
+import urllib2
+import time
 
 from workflow import Workflow, web, ICON_INFO, ICON_ERROR,ICON_NOTE
 
 log = None
+
+def get_thumbnail(uid):
+    filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
+    if thumbnail_cache_exists(uid) is True:
+        return filename
+    else:
+        return wf.workflowdir+"/icon.png"
+
+def thumbnail_cache_exists(uid):
+    filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
+    if os.path.isfile(filename):
+        days_old = (time.time() - os.stat(filename).st_mtime) / 86400
+        if days_old > 7:
+            return False
+        else:
+            return True
+    return False
 
 def key_for_item(item):
     return '{} {}'.format(item['notesEmailWithDomain'],item['preferredIdentity'])
@@ -35,7 +54,7 @@ def main(wf):
             if items and len(items)>0:
                 hcount = 0
                 for item in items:
-                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]))
+                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
                     counter+=1
 
                     #Show max 9 from cache
@@ -103,6 +122,22 @@ if __name__ == '__main__':
             'frequency': 1
     })
     log = wf.logger
+
+    # Create folder if not available
+    filename = wf.datadir + '/cached/0.jpg'
+    if not os.path.exists(os.path.dirname(filename)):
+        try:
+            os.makedirs(os.path.dirname(filename))
+        except OSError as exc: # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
+
+    # Delete old cached images > 7 days
+    path = wf.datadir + '/cached/'
+    for f in os.listdir(path):
+        if os.stat(os.path.join(path,f)).st_mtime < time.time() - 7 * 86400:
+            if os.path.isfile(os.path.join(path, f)):
+                os.remove(os.path.join(path, f))
 
     # Call your entry function via `Workflow.run()` to enable its helper
     # functions, like exception catching, ARGV normalization, magic

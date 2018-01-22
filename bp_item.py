@@ -7,8 +7,36 @@ import json
 import copy
 import urllib
 import re
+import urllib2
+import time
 
 from workflow import Workflow, web
+
+def get_thumbnail(uid):
+	filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
+	if thumbnail_cache_exists(uid) is True:
+		return filename
+	else:
+		# Try to get a copy
+		try:
+			img = urllib2.urlopen('https://w3-services1.w3-969.ibm.com/myw3/unified-profile-photo/v1/image/{0}?def=blue&s=64'.format(uid))
+			localFile = open(filename, 'wb')
+			localFile.write(img.read())
+			localFile.close()
+			return filename
+		except:
+			return wf.workflowdir+"/icon.png"
+			pass
+
+def thumbnail_cache_exists(uid):
+	filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
+	if os.path.isfile(filename):
+		days_old = (time.time() - os.stat(filename).st_mtime) / 86400
+		if days_old > 7:
+			return False
+		else:
+			return True
+	return False
 
 def add_item(wf, atitle, asubtitle, aquery, aaction, aicon = None):
 	arg = {"alfredworkflow": {"arg": aquery,"variables": {"action": aaction}}}
@@ -59,7 +87,7 @@ def main(wf):
 	wf.store_data('items',items, serializer='json')
 
 	# Add profile
-	add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser")
+	add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
 
 	# Add mail
 	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")

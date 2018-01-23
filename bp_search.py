@@ -48,6 +48,7 @@ def main(wf):
 
 
     # If there is no argument passed take last used from cache (if there is a cache)
+    uidhitlist = []
     if len(query.strip()) == 0:
         try:
             items = wf.stored_data('items')
@@ -67,26 +68,26 @@ def main(wf):
             pass
 
     ## First check store
-    items = wf.stored_data('items')
-    uidhitlist = []
-    try:
-        if items:
-            #items = json.loads(items)
-            hits = wf.filter(query, items, key_for_item, min_score=20)
-            hcount = 0
-            for hit in hits:
-                wf.add_item(title=hit["nameFull"], subtitle=(hit["role"] if hit.get("role") else ""), autocomplete=hit["nameFull"], arg=json.dumps(hit), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+hit["uid"]))
-                #Add UID to hit list to avoid double entries
-                uidhitlist.append(hit["uid"])
-                counter+=1
+    else:
+        try:
+            items = wf.stored_data('items')
+            if items:
+                hits = wf.filter(query, items, key_for_item, min_score=20)
+                log.debug(hits)
+                hcount = 0
+                for hit in hits:
+                    wf.add_item(title=hit["nameFull"], subtitle=(hit["role"] if hit.get("role") else ""), autocomplete=hit["nameFull"], arg=json.dumps(hit), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+hit["uid"]), icon=get_thumbnail(hit["uid"]))
+                    #Add UID to hit list to avoid double entries
+                    uidhitlist.append(hit["uid"])
+                    counter+=1
 
-                #Show max 5 from cache
-                hcount = hcount +1
-                if hcount == 5:
-                    break
-    except:
-        #do nothing
-        pass
+                    #Show max 5 from cache
+                    hcount = hcount +1
+                    if hcount == 5:
+                        break
+        except:
+            #do nothing
+            pass
 
     try:
         if len(query)>0:
@@ -97,7 +98,7 @@ def main(wf):
             for item in r["results"]:
                 #Only add if UID not is in the cached hit list and it has an email
                 if item["uid"] not in uidhitlist and item.get("preferredIdentity") and "FUNCTIONAL-ID" not in item["nameFull"]:
-                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]))
+                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
                     counter+=1
     except:
         wf.add_item(title="Unable to reach Bluepages", subtitle="Please verify that you are connected to the IBM Intranet", valid=False, icon=ICON_ERROR)
@@ -107,7 +108,7 @@ def main(wf):
     # Send output to Alfred. You can only call this once.
     # Well, you *can* call it multiple times, but Alfred won't be listening	# any more...
     if counter == 0:
-        wf.add_item(title="No hits", subtitle="Add or adjust your search parameter", valid=False, icon=ICON_NOTE)
+        wf.add_item(title="No hits in Bluepages", subtitle="Add or adjust your search parameter", valid=False, icon=ICON_NOTE)
 
     wf.send_feedback()
 

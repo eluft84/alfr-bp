@@ -48,20 +48,28 @@ def main(wf):
 
 
     # If there is no argument passed take last used from cache (if there is a cache)
+    # Also clean up old cached items. Check added_timestamp > 7 days
     uidhitlist = []
+    newitems = []
     if len(query.strip()) == 0:
         try:
             items = wf.stored_data('items')
             if items and len(items)>0:
                 hcount = 0
                 for item in items:
-                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
-                    counter+=1
+                    if item["added_timestamp"] and ((time.time() - item["added_timestamp"])/86400 < 7):
+                        wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
+                        counter+=1
 
-                    #Show max 9 from cache
-                    hcount = hcount +1
-                    if hcount == 9:
-                        break
+                        # Add to new list
+                        newitems.append(item)
+
+                        #Show max 9 from cache
+                        hcount = hcount +1
+                        if hcount == 9:
+                            break
+                # Save after removing old entries
+                wf.store_data('items',newitems, serializer='json')
         except:
             #delete json
             wf.clear_data(lambda f: f.endswith('items.json'))

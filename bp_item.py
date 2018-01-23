@@ -66,6 +66,12 @@ def main(wf):
 
 	item = json.loads(os.environ['item'])
 
+	# Add timestamp to item if it doesn't exist
+	try:
+		item["added_timestamp"]
+	except:
+		item["added_timestamp"] = time.time()
+
 	#Add item to store
 	items = wf.stored_data('items')
 	if items:

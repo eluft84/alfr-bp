@@ -7,6 +7,7 @@ import json
 import urllib
 import urllib2
 import time
+import re
 
 from workflow import Workflow, web, ICON_INFO, ICON_ERROR,ICON_NOTE
 
@@ -58,7 +59,7 @@ def main(wf):
                 hcount = 0
                 for item in items:
                     if item["added_timestamp"] and ((time.time() - item["added_timestamp"])/86400 < 7):
-                        wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
+                        wf.add_item(title=item["nameFull"], subtitle=(re.sub(' +', ' ', item['role']) if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
                         counter+=1
 
                         # Add to new list
@@ -84,7 +85,7 @@ def main(wf):
                 log.debug(hits)
                 hcount = 0
                 for hit in hits:
-                    wf.add_item(title=hit["nameFull"], subtitle=(hit["role"] if hit.get("role") else ""), autocomplete=hit["nameFull"], arg=json.dumps(hit), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+hit["uid"]), icon=get_thumbnail(hit["uid"]))
+                    wf.add_item(title=hit["nameFull"], subtitle=(re.sub(' +', ' ', hit['role']) if hit.get("role") else ""), autocomplete=hit["nameFull"], arg=json.dumps(hit), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+hit["uid"]), icon=get_thumbnail(hit["uid"]))
                     #Add UID to hit list to avoid double entries
                     uidhitlist.append(hit["uid"])
                     counter+=1

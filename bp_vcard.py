@@ -60,7 +60,7 @@ def main(wf):
 
     if item.get('role'):
         j.add('title')
-        j.title.value = item['role']
+        j.title.value = re.sub(' +', ' ', item['role'])
 
     if item.get("telephone_mobile"):
         j.add('tel')

@@ -44,6 +44,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>08762BF3-6C4E-48CF-A7D0-33807FB0AF80</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>432C9F1A-21FA-4D21-A8B2-616A84BCD9AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</key>
 		<array>
 			<dict>
@@ -144,6 +157,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>296587B2-1904-42C3-B00B-750730C01D86</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -168,6 +191,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D45634AC-8C77-4494-BB10-3733A2C52B8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A43748D2-D1D5-4EF3-94B7-D59EC6CF54C6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>296587B2-1904-42C3-B00B-750730C01D86</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3F2AD44-E9BA-4882-B254-898211BBCB9D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -202,8 +248,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>432C9F1A-21FA-4D21-A8B2-616A84BCD9AE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>44A13F83-9C82-4C9E-827F-558A1B4EA127</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>73D08B33-7363-44A9-83DB-017EF27AE97A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
@@ -424,6 +493,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>73D08B33-7363-44A9-83DB-017EF27AE97A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A3F8122-CDD8-411B-909B-71BE6EC045FE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</key>
 		<array>
 			<dict>
@@ -513,6 +595,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8A3F8122-CDD8-411B-909B-71BE6EC045FE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EA598139-5E98-492B-A01F-793E1C6085B7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F4888166-9E4B-4EB4-A12C-0D2344F9685C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</key>
 		<array>
 			<dict>
@@ -526,11 +631,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9E9F842E-AC24-46DC-91AB-FBB0FE66AC50</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A1FEE164-4F28-4335-A149-D228E2F2946C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A43748D2-D1D5-4EF3-94B7-D59EC6CF54C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3D869BB2-C1ED-47DB-A392-7D84A2BF1C38</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -770,6 +901,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E7E36040-B881-4254-8731-A0EE35BA2300</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>08762BF3-6C4E-48CF-A7D0-33807FB0AF80</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EA598139-5E98-492B-A01F-793E1C6085B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E9F842E-AC24-46DC-91AB-FBB0FE66AC50</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EE156AE2-EE2C-4284-A4AD-83D194D8A82C</key>
 		<array>
 			<dict>
@@ -788,6 +945,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>2904724D-0CC6-4727-BDE5-774D36F36D8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F4888166-9E4B-4EB4-A12C-0D2344F9685C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7E36040-B881-4254-8731-A0EE35BA2300</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1427,6 +1597,44 @@ end run</string>
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
+				<string>ciscospark</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>A43748D2-D1D5-4EF3-94B7-D59EC6CF54C6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>ciscospark</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>296587B2-1904-42C3-B00B-750730C01D86</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
 				<string>clipboard</string>
 			</dict>
 			<key>type</key>
@@ -1476,6 +1684,52 @@ end alfred_script</string>
 			<string>5FC3A13D-971E-4922-87ED-6982C682DD4E</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+import sys
+import os
+from workflow import Workflow
+from ciscosparkapi import CiscoSparkAPI
+
+log = None
+
+def main(wf):
+	cisco = CiscoSparkAPI(access_token=wf.stored_data('bp-cisco'))
+	number = os.getenv('number')
+
+	t = cisco.messages.create(toPersonEmail=number, text=sys.argv[1])
+
+
+if __name__ == '__main__':
+	# Create a global `Workflow` object
+	wf = Workflow()
+	log = wf.logger
+	# Call your entry function via `Workflow.run()` to enable its helper
+	# functions, like exception catching, ARGV normalization, magic
+	# arguments etc.
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3D869BB2-C1ED-47DB-A392-7D84A2BF1C38</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1787,19 +2041,35 @@ if __name__ == '__main__':
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
+				<key>concurrently</key>
 				<false/>
-				<key>processoutputs</key>
-				<true/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+wf = Workflow()
+
+wf.clear_data(lambda f: f.endswith('cisco.cpickle'))
+
+sys.stdout.write("API config has been cleared")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
+			<string>9E9F842E-AC24-46DC-91AB-FBB0FE66AC50</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1817,9 +2087,12 @@ from workflow import Workflow
 
 wf = Workflow()
 
-wf.clear_data(lambda f: f.endswith('.cpickle'))
+cisco = False
 
-sys.stdout.write("API config has been cleared")</string>
+if wf.stored_data('bp-cisco'):
+	cisco = True
+
+sys.stdout.write('False' if cisco else 'True')</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1830,9 +2103,156 @@ sys.stdout.write("API config has been cleared")</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>DC48166F-90CC-4DFC-A37B-64BD610F141F</string>
+			<string>8A3F8122-CDD8-411B-909B-71BE6EC045FE</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>False</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>EA598139-5E98-492B-A01F-793E1C6085B7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>ciscospark</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>73D08B33-7363-44A9-83DB-017EF27AE97A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>True</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>F4888166-9E4B-4EB4-A12C-0D2344F9685C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>reg-bp-cisco</string>
+				<key>subtext</key>
+				<string>Register your Cisco Spark API key in order to send Spark messages</string>
+				<key>text</key>
+				<string>Bluepages set Cisco Spark API key</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>08762BF3-6C4E-48CF-A7D0-33807FB0AF80</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+api = sys.argv[1]
+
+wf = Workflow()
+wf.store_data('bp-cisco', api)
+
+sys.stdout.write("Cisco Spark API has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>432C9F1A-21FA-4D21-A8B2-616A84BCD9AE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key></key>
+					<string></string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E7E36040-B881-4254-8731-A0EE35BA2300</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1888,6 +2308,40 @@ sys.stdout.write('False' if pushbullet else 'True')</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>5D80A623-614C-4205-AAAB-6A61F0380DDD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+wf = Workflow()
+
+wf.clear_data(lambda f: f.endswith('api.cpickle'))
+wf.clear_data(lambda f: f.endswith('device.cpickle'))
+
+sys.stdout.write("API config has been cleared")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DC48166F-90CC-4DFC-A37B-64BD610F141F</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -2526,6 +2980,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>430</integer>
 		</dict>
+		<key>08762BF3-6C4E-48CF-A7D0-33807FB0AF80</key>
+		<dict>
+			<key>note</key>
+			<string>Use with your Pushbullet API https://www.pushbullet.com/#settings/account to send text messages via your Pushbullet phone app</string>
+			<key>xpos</key>
+			<integer>630</integer>
+			<key>ypos</key>
+			<integer>1200</integer>
+		</dict>
 		<key>0BCDDA9A-98C3-4573-81AE-226129EDAD8F</key>
 		<dict>
 			<key>note</key>
@@ -2565,6 +3028,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>260</integer>
 		</dict>
+		<key>296587B2-1904-42C3-B00B-750730C01D86</key>
+		<dict>
+			<key>note</key>
+			<string>Cisco Spark</string>
+			<key>xpos</key>
+			<integer>1530</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
 		<key>2EBE5BD8-9F35-4FAA-8EEA-474E957D44A8</key>
 		<dict>
 			<key>note</key>
@@ -2573,6 +3045,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>2110</integer>
 			<key>ypos</key>
 			<integer>260</integer>
+		</dict>
+		<key>3D869BB2-C1ED-47DB-A392-7D84A2BF1C38</key>
+		<dict>
+			<key>xpos</key>
+			<integer>2110</integer>
+			<key>ypos</key>
+			<integer>490</integer>
 		</dict>
 		<key>3FD6BE29-EC26-4C15-B351-6E405F3FC902</key>
 		<dict>
@@ -2589,6 +3068,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>1300</integer>
 			<key>ypos</key>
 			<integer>1730</integer>
+		</dict>
+		<key>432C9F1A-21FA-4D21-A8B2-616A84BCD9AE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>800</integer>
+			<key>ypos</key>
+			<integer>1210</integer>
 		</dict>
 		<key>44A13F83-9C82-4C9E-827F-558A1B4EA127</key>
 		<dict>
@@ -2704,6 +3190,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
+		<key>73D08B33-7363-44A9-83DB-017EF27AE97A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>1200</integer>
+		</dict>
 		<key>78B7BBBB-07F4-4491-8E36-591D14B3AF78</key>
 		<dict>
 			<key>xpos</key>
@@ -2741,9 +3234,18 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>note</key>
 			<string>Searches faces based on hotkey or free text with "bp" keyword. Preview URL is available using "cmd+y"</string>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>420</integer>
 			<key>ypos</key>
 			<integer>100</integer>
+		</dict>
+		<key>8A3F8122-CDD8-411B-909B-71BE6EC045FE</key>
+		<dict>
+			<key>note</key>
+			<string>Toggle Cisco Spark</string>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>1100</integer>
 		</dict>
 		<key>93F98F96-E5EE-4BB7-A351-D602BE01F4D4</key>
 		<dict>
@@ -2768,12 +3270,28 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>600</integer>
 		</dict>
+		<key>9E9F842E-AC24-46DC-91AB-FBB0FE66AC50</key>
+		<dict>
+			<key>xpos</key>
+			<integer>630</integer>
+			<key>ypos</key>
+			<integer>1080</integer>
+		</dict>
 		<key>A1FEE164-4F28-4335-A149-D228E2F2946C</key>
 		<dict>
 			<key>xpos</key>
 			<integer>630</integer>
 			<key>ypos</key>
 			<integer>1420</integer>
+		</dict>
+		<key>A43748D2-D1D5-4EF3-94B7-D59EC6CF54C6</key>
+		<dict>
+			<key>note</key>
+			<string>Cisco Spark</string>
+			<key>xpos</key>
+			<integer>2010</integer>
+			<key>ypos</key>
+			<integer>420</integer>
 		</dict>
 		<key>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</key>
 		<dict>
@@ -2905,9 +3423,9 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 		<key>DC48166F-90CC-4DFC-A37B-64BD610F141F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>740</integer>
+			<integer>700</integer>
 			<key>ypos</key>
-			<integer>1260</integer>
+			<integer>1330</integer>
 		</dict>
 		<key>DFD5201F-DC22-4027-ABDF-BE46A6445AFA</key>
 		<dict>
@@ -2936,6 +3454,22 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
+		<key>E7E36040-B881-4254-8731-A0EE35BA2300</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>1250</integer>
+		</dict>
+		<key>EA598139-5E98-492B-A01F-793E1C6085B7</key>
+		<dict>
+			<key>note</key>
+			<string>Reset</string>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>1110</integer>
+		</dict>
 		<key>ED066E7E-CE51-4236-854B-076EF5B92206</key>
 		<dict>
 			<key>xpos</key>
@@ -2956,6 +3490,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>1670</integer>
 			<key>ypos</key>
 			<integer>300</integer>
+		</dict>
+		<key>F4888166-9E4B-4EB4-A12C-0D2344F9685C</key>
+		<dict>
+			<key>note</key>
+			<string>Set</string>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>1200</integer>
 		</dict>
 		<key>FB3D899E-BEDB-4BAF-AEAC-0869A7CEF136</key>
 		<dict>

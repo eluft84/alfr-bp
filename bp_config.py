@@ -39,6 +39,7 @@ def main(wf):
     facetime = False
     sut = True
     pushbullet = False
+    ciscospark = False
 
     # Check status
     if wf.stored_data('bp-imessage'):
@@ -47,6 +48,8 @@ def main(wf):
     if wf.stored_data('bp-facetime'):
         facetime = wf.stored_data('bp-facetime').lower().strip() \
             in ('yes', 'true', '1', 'on', 'yeah')
+    if wf.stored_data('bp-cisco'):
+        ciscospark = True
 
     if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
         pushbullet = True
@@ -65,6 +68,9 @@ def main(wf):
     add_item(wf, 'Pushbullet '+('ENABLED' if pushbullet else 'DISABLED'),
              'Toggle Pushbullet integration (SMS using Android)', '',
              'pushbullet','images/pushbullet.png')
+    add_item(wf, 'Cisco Spark '+('ENABLED' if ciscospark else 'DISABLED'),
+             'Toggle Cisco Spark integration (messages)', '',
+             'ciscospark','images/ciscospark.png')
     add_item(wf, 'Link to Mac@IBM forum',
              'Ask questions or report bugs', 'https://w3-connections.ibm.com/forums/html/topic?id=efeae0bf-3d7e-48a2-8573-b31f940c111b',
              'url')

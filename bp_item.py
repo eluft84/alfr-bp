@@ -9,6 +9,7 @@ import urllib
 import re
 import urllib2
 import time
+from ciscosparkapi import CiscoSparkAPI
 
 from workflow import Workflow, web
 
@@ -122,6 +123,17 @@ def main(wf):
 	if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
 		pushbullet = True
 
+	# Cisco Spark
+	cisco = False
+	cisco_person = None
+	if wf.stored_data('bp-cisco'):
+		cisco = CiscoSparkAPI(access_token=wf.stored_data('bp-cisco'))
+
+		# Should only get one hit
+		l = cisco.people.list(email=item["preferredIdentity"].lower())
+		for p in l:
+			cisco_person = p
+
 	try:
 		try:
 			r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
@@ -166,6 +178,10 @@ def main(wf):
 			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "images/imessage.png")
 		if item.get("telephone_office") and not phone_duplicates:
 			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Messages', clean_number(item["telephone_office"], True), "imessage", "images/imessage.png")
+
+	#Cisco Spark
+	if cisco and cisco_person and cisco_person.status != 'unknown':
+		add_item(wf, "Direct message",'Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
 
 	# Add copy email and paste
 	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")

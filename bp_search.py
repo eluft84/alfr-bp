@@ -129,7 +129,7 @@ if __name__ == '__main__':
             'github_slug': 'nidayand/alfr-bp',
 
             # Optional number of days between checks for updates
-            'frequency': 1
+            'frequency': 7
     })
     log = wf.logger
 

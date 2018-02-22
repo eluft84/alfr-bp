@@ -222,6 +222,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3283F531-379F-45DF-89E6-1140EF8AE8D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3FD6BE29-EC26-4C15-B351-6E405F3FC902</key>
 		<array>
 			<dict>
@@ -316,6 +329,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>66B8071F-5BE5-42B6-A5D2-A19416CA5DC2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>94556261-7B43-428A-B916-7CC6AE63A3E1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -623,6 +646,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>99075CE0-8BD2-4E35-9812-40E99DE4E532</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>94556261-7B43-428A-B916-7CC6AE63A3E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3283F531-379F-45DF-89E6-1140EF8AE8D3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2585,25 +2621,6 @@ sys.stdout.write("Messages setting has been saved")</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{var:action}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>facetime</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>66B8071F-5BE5-42B6-A5D2-A19416CA5DC2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -2825,6 +2842,25 @@ sys.stdout.write("FaceTime setting has been saved")</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>facetime</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>66B8071F-5BE5-42B6-A5D2-A19416CA5DC2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>variables</key>
@@ -2907,6 +2943,64 @@ sys.stdout.write("Pushbullet API has been saved")</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>6D196B98-2F13-4FD4-8074-8C18245874D1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>whatsapp</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>94556261-7B43-428A-B916-7CC6AE63A3E1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+#imessage = sys.argv[1]
+
+wf = Workflow()
+
+whatsapp = False
+if wf.stored_data('bp-whatsapp'):
+	whatsapp = wf.stored_data('bp-whatsapp').lower().strip() in ('yes', 'true', '1', 'on', 'yeah')
+
+wf.store_data('bp-whatsapp', ('false' if whatsapp else 'true'))
+
+sys.stdout.write("WhatsApp setting has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3283F531-379F-45DF-89E6-1140EF8AE8D3</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -3046,6 +3140,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>260</integer>
 		</dict>
+		<key>3283F531-379F-45DF-89E6-1140EF8AE8D3</key>
+		<dict>
+			<key>note</key>
+			<string>Toggle WhatsApp</string>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>1870</integer>
+		</dict>
 		<key>3D869BB2-C1ED-47DB-A392-7D84A2BF1C38</key>
 		<dict>
 			<key>xpos</key>
@@ -3163,7 +3266,7 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>xpos</key>
 			<integer>200</integer>
 			<key>ypos</key>
-			<integer>1590</integer>
+			<integer>1730</integer>
 		</dict>
 		<key>6D196B98-2F13-4FD4-8074-8C18245874D1</key>
 		<dict>
@@ -3263,6 +3366,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
+		<key>94556261-7B43-428A-B916-7CC6AE63A3E1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>1860</integer>
+		</dict>
 		<key>99075CE0-8BD2-4E35-9812-40E99DE4E532</key>
 		<dict>
 			<key>xpos</key>
@@ -3352,7 +3462,7 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
-			<integer>1860</integer>
+			<integer>2000</integer>
 		</dict>
 		<key>CC1A9786-0075-44E1-B1BF-AA31707926EE</key>
 		<dict>
@@ -3482,7 +3592,7 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>1760</integer>
+			<integer>1960</integer>
 		</dict>
 		<key>F3F2AD44-E9BA-4882-B254-898211BBCB9D</key>
 		<dict>

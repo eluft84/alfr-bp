@@ -43,7 +43,7 @@ def add_item(wf, atitle, asubtitle, aquery, aaction, aicon = None):
 	arg = {"alfredworkflow": {"arg": aquery,"variables": {"action": aaction}}}
 	wf.add_item(title=atitle, subtitle=asubtitle, arg=json.dumps(arg), valid='True', icon=(aicon if aicon else ""))
 
-def clean_number(nbr, plus = False):
+def clean_number(nbr, plus = False, withoutzero = False):
 	out = nbr.replace(" ", "")
 	out = out.replace("-", "")
 	out = out.replace(",", "")
@@ -55,6 +55,8 @@ def clean_number(nbr, plus = False):
 
 	if plus:
 		return "+"+out
+	elif withoutzero:
+		return out
 	else:
 		return "00"+out
 
@@ -105,10 +107,15 @@ def main(wf):
 	sut = True
 	facetime = False
 	pushbullet = False
+	whatsapp = False
 
 	#iPhone
 	if wf.stored_data('bp-imessage'):
 		imessage = wf.stored_data('bp-imessage').lower().strip() in ("yes", "true", "1", "on", "yeah")
+
+	#WhatsApp
+	if wf.stored_data('bp-whatsapp'):
+		whatsapp = wf.stored_data('bp-whatsapp').lower().strip() in ("yes", "true", "1", "on", "yeah")
 
 	#Sametime Unified Telephony
 	if wf.stored_data('bp-sut'):
@@ -178,6 +185,11 @@ def main(wf):
 			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "images/imessage.png")
 		if item.get("telephone_office") and not phone_duplicates:
 			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Messages', clean_number(item["telephone_office"], True), "imessage", "images/imessage.png")
+
+	#WhatsApp
+	if whatsapp:
+		if item.get("telephone_mobile"):
+			add_item(wf, 'Chat with '+item["nameFull"], 'Using WhatsApp', "https://api.whatsapp.com/send?phone="+urllib.quote(clean_number(item["telephone_mobile"], False, True)), "browser", "images/whatsapp.png")
 
 	#Cisco Spark
 	if cisco and cisco_person and cisco_person.status != 'unknown':

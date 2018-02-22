@@ -40,6 +40,7 @@ def main(wf):
     sut = True
     pushbullet = False
     ciscospark = False
+    whatsapp = False
 
     # Check status
     if wf.stored_data('bp-imessage'):
@@ -50,6 +51,9 @@ def main(wf):
             in ('yes', 'true', '1', 'on', 'yeah')
     if wf.stored_data('bp-cisco'):
         ciscospark = True
+    if wf.stored_data('bp-whatsapp'):
+        whatsapp = wf.stored_data('bp-whatsapp').lower().strip() \
+            in ('yes', 'true', '1', 'on', 'yeah')
 
     if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
         pushbullet = True
@@ -65,6 +69,9 @@ def main(wf):
     add_item(wf, 'Messages '+('ENABLED' if imessage else 'DISABLED'),
              'Toggle Messages integration (SMS using iPhone)', '',
              'imessage','images/imessage.png')
+    add_item(wf, 'WhatsApp '+('ENABLED' if whatsapp else 'DISABLED'),
+             'Toggle WhatsApp integration (links to web-UI)', '',
+             'whatsapp','images/whatsapp.png')
     add_item(wf, 'Pushbullet '+('ENABLED' if pushbullet else 'DISABLED'),
              'Toggle Pushbullet integration (SMS using Android)', '',
              'pushbullet','images/pushbullet.png')

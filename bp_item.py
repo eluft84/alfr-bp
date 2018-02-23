@@ -10,8 +10,19 @@ import re
 import urllib2
 import time
 from ciscosparkapi import CiscoSparkAPI
-
 from workflow import Workflow, web
+from datetime import tzinfo, timedelta, datetime
+import dateutil.parser
+
+log = None
+ZERO = timedelta(0)
+class UTC(tzinfo):
+	def utcoffset(self, dt):
+		return ZERO
+	def tzname(self, dt):
+		return "UTC"
+	def dst(self, dt):
+		return ZERO
 
 def get_thumbnail(uid):
 	filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
@@ -61,7 +72,6 @@ def clean_number(nbr, plus = False, withoutzero = False):
 		return "00"+out
 
 
-
 def main(wf):
 	# https://github.com/deanishe/alfred-workflow
 	# http://www.deanishe.net/alfred-workflow/
@@ -79,7 +89,6 @@ def main(wf):
 	items = wf.stored_data('items')
 	if items:
 		#Check if it already exists and if so remove
-		#items = json.loads(items)
 		foundIndex = -1
 		for index in range(len(items)):
 			if items[index]["uid"] == item["uid"]:
@@ -108,6 +117,11 @@ def main(wf):
 	facetime = False
 	pushbullet = False
 	whatsapp = False
+	sametimechat = True
+
+	# Sametime
+	if wf.stored_data('bp-sametimechat'):
+		sametimechat = wf.stored_data('bp-sametimechat').lower().strip() in ("yes", "true", "1", "on", "yeah")
 
 	#iPhone
 	if wf.stored_data('bp-imessage'):
@@ -140,37 +154,41 @@ def main(wf):
 		l = cisco.people.list(email=item["preferredIdentity"].lower())
 		for p in l:
 			cisco_person = p
+			log.debug(p)
 
-	try:
+
+	# Check if the office and mobile are the same number
+	if item.get("telephone_mobile") and item.get("telephone_office") and (clean_number(item.get("telephone_mobile")) == clean_number(item.get("telephone_office"))):
+		phone_duplicates = True
+	else:
+		phone_duplicates = False
+
+	# Sametime features
+	if sametimechat:
 		try:
-			r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
-			r = r.json()
+			try:
+				r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
+				r = r.json()
 
-			# Add chat
-			if r["status"]>0:
-				add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
+				# Add chat
+				if r["status"]>0:
+					add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
+			except:
+				pass
+
+			r = web.get('http://localhost:59449/stwebapi/call')
+
+			if sut and item.get("telephone_mobile"):
+				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
+			if facetime and item.get("telephone_mobile"):
+				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
+
+			if sut and item.get("telephone_office") and  not phone_duplicates:
+				add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
+			if facetime and item.get("telephone_office") and  not phone_duplicates:
+				add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
 		except:
 			pass
-
-		r = web.get('http://localhost:59449/stwebapi/call')
-
-		#Check if the office and mobile are the same number
-		if item.get("telephone_mobile") and item.get("telephone_office") and (clean_number(item.get("telephone_mobile")) == clean_number(item.get("telephone_office"))):
-			phone_duplicates = True
-		else:
-			phone_duplicates = False
-
-		if sut and item.get("telephone_mobile"):
-			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
-		if facetime and item.get("telephone_mobile"):
-			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
-
-		if sut and item.get("telephone_office") and  not phone_duplicates:
-			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
-		if facetime and item.get("telephone_office") and  not phone_duplicates:
-			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
-	except:
-		pass
 
 	#Pushbullet
 	if pushbullet:
@@ -193,7 +211,25 @@ def main(wf):
 
 	#Cisco Spark
 	if cisco and cisco_person and cisco_person.status != 'unknown':
-		add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+		# Get time
+		lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
+		now = datetime.now(UTC())
+		d = datetime(1,1,1) + (now - lastActivity)
+		txt = 'Active '
+		if (d.day-1) > 1:
+			txt += str(d.day-1) + ' days ago'
+		elif (d.day-1) > 0:
+			txt += str(d.day-1) + ' day ago'
+		elif d.hour > 1:
+			txt += str(d.hour) + ' hours ago'
+		elif d.hour > 0:
+			txt += str(d.hour) + ' hour ago'
+		elif d.minute > 1:
+			txt += str(d.minute) + ' minutes ago'
+		elif d.minute > 0:
+			txt += str(d.minute) + ' minute ago'
+
+		add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark ('+txt+')',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
 
 	# Add copy email and paste
 	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")
@@ -225,6 +261,7 @@ def main(wf):
 if __name__ == '__main__':
 	# Create a global `Workflow` object
 	wf = Workflow()
+	log = wf.logger
 	# Call your entry function via `Workflow.run()` to enable its helper
 	# functions, like exception catching, ARGV normalization, magic
 	# arguments etc.

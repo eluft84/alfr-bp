@@ -41,6 +41,7 @@ def main(wf):
     pushbullet = False
     ciscospark = False
     whatsapp = False
+    sametimechat = True
 
     # Check status
     if wf.stored_data('bp-imessage'):
@@ -51,6 +52,9 @@ def main(wf):
             in ('yes', 'true', '1', 'on', 'yeah')
     if wf.stored_data('bp-cisco'):
         ciscospark = True
+    if wf.stored_data('bp-sametimechat'):
+        sametimechat = wf.stored_data('bp-sametimechat').lower().strip() \
+            in ('yes', 'true', '1', 'on', 'yeah')
     if wf.stored_data('bp-whatsapp'):
         whatsapp = wf.stored_data('bp-whatsapp').lower().strip() \
             in ('yes', 'true', '1', 'on', 'yeah')
@@ -61,8 +65,10 @@ def main(wf):
         sut = wf.stored_data('bp-sut').lower().strip() \
             in ('yes', 'true', '1', 'on', 'yeah')
 
+    add_item(wf, 'Sametime '+('ENABLED' if sametimechat else 'DISABLED'), 'Toggle Sametime', ''
+             , 'sametime','images/st.png')
     add_item(wf, 'Sametime Unified Telephony '+('ENABLED' if sut else 'DISABLED'), 'Toggle SUT (call with Sametime)', ''
-             , 'sametime','images/mobile.png')
+             , 'sut','images/mobile.png')
     add_item(wf, 'FaceTime '+('ENABLED' if facetime else 'DISABLED'),
              'Toggle FaceTime integration (call using iPhone)', '',
              'facetime','images/facetime.png')

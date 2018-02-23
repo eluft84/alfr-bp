@@ -288,16 +288,6 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>DB451DD4-E6E0-4AEC-A307-C15324B59240</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -309,6 +299,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FF660AA1-E86C-4E82-9C84-F5349D909559</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A06BC2BC-151E-4B62-AB01-3AE76E861DC5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -434,16 +434,6 @@
 		</array>
 		<key>5D80A623-614C-4205-AAAB-6A61F0380DDD</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>D387E1FD-9917-4397-9402-CC1473DE461F</string>
@@ -667,11 +657,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>98BB7711-8856-4663-82FC-50D3308CFEEB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9E9F842E-AC24-46DC-91AB-FBB0FE66AC50</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>ED066E7E-CE51-4236-854B-076EF5B92206</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A06BC2BC-151E-4B62-AB01-3AE76E861DC5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98BB7711-8856-4663-82FC-50D3308CFEEB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2294,23 +2310,6 @@ sys.stdout.write("Cisco Spark API has been saved")</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>7C000315-F148-491C-AC85-5C2104B8FF41</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string></string>
 				<key>variables</key>
 				<dict>
@@ -2586,7 +2585,7 @@ sys.stdout.write("SUT setting has been saved")</string>
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
-				<string>sametime</string>
+				<string>sut</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
@@ -2594,6 +2593,63 @@ sys.stdout.write("SUT setting has been saved")</string>
 			<string>FF660AA1-E86C-4E82-9C84-F5349D909559</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>sametime</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>A06BC2BC-151E-4B62-AB01-3AE76E861DC5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# encoding: utf-8
+
+import sys
+from workflow import Workflow
+
+wf = Workflow()
+
+sametimechat = True
+
+if wf.stored_data('bp-sametimechat'):
+	sametimechat = wf.stored_data('bp-sametimechat').lower().strip() in ('yes', 'true', '1', 'on', 'yeah')
+
+wf.store_data('bp-sametimechat', ('false' if sametimechat else 'true'))
+
+sys.stdout.write("Sametime setting has been saved")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>98BB7711-8856-4663-82FC-50D3308CFEEB</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3342,13 +3398,6 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>890</integer>
 		</dict>
-		<key>7C000315-F148-491C-AC85-5C2104B8FF41</key>
-		<dict>
-			<key>xpos</key>
-			<integer>280</integer>
-			<key>ypos</key>
-			<integer>1250</integer>
-		</dict>
 		<key>7D65CD6A-D46F-43AE-96FF-92C865DC7D91</key>
 		<dict>
 			<key>note</key>
@@ -3417,6 +3466,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<key>ypos</key>
 			<integer>1860</integer>
 		</dict>
+		<key>98BB7711-8856-4663-82FC-50D3308CFEEB</key>
+		<dict>
+			<key>note</key>
+			<string>Toggle Sametime</string>
+			<key>xpos</key>
+			<integer>470</integer>
+			<key>ypos</key>
+			<integer>1520</integer>
+		</dict>
 		<key>99075CE0-8BD2-4E35-9812-40E99DE4E532</key>
 		<dict>
 			<key>xpos</key>
@@ -3430,6 +3488,13 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>630</integer>
 			<key>ypos</key>
 			<integer>1080</integer>
+		</dict>
+		<key>A06BC2BC-151E-4B62-AB01-3AE76E861DC5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>1520</integer>
 		</dict>
 		<key>A1FEE164-4F28-4335-A149-D228E2F2946C</key>
 		<dict>

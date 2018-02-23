@@ -82,7 +82,6 @@ def main(wf):
             items = wf.stored_data('items')
             if items:
                 hits = wf.filter(query, items, key_for_item, min_score=20)
-                log.debug(hits)
                 hcount = 0
                 for hit in hits:
                     wf.add_item(title=hit["nameFull"], subtitle=(re.sub(' +', ' ', hit['role']) if hit.get("role") else ""), autocomplete=hit["nameFull"], arg=json.dumps(hit), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+hit["uid"]), icon=get_thumbnail(hit["uid"]))

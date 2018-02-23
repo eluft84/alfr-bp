@@ -705,6 +705,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D65CD6A-D46F-43AE-96FF-92C865DC7D91</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>AEC3623B-CACD-4D99-A28F-F6AEDF6EF189</key>
 		<array>
@@ -1869,6 +1879,31 @@ if __name__ == '__main__':
 			<string>99075CE0-8BD2-4E35-9812-40E99DE4E532</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+	tell application "Cisco Spark" to activate
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7D65CD6A-D46F-43AE-96FF-92C865DC7D91</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3313,6 +3348,15 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 			<integer>280</integer>
 			<key>ypos</key>
 			<integer>1250</integer>
+		</dict>
+		<key>7D65CD6A-D46F-43AE-96FF-92C865DC7D91</key>
+		<dict>
+			<key>note</key>
+			<string>If Cisco Spark app is installed open it</string>
+			<key>xpos</key>
+			<integer>2060</integer>
+			<key>ypos</key>
+			<integer>610</integer>
 		</dict>
 		<key>7EF284F9-F1D7-41A4-8FA0-6E555BC7C8CE</key>
 		<dict>

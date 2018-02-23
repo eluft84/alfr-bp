@@ -193,7 +193,7 @@ def main(wf):
 
 	#Cisco Spark
 	if cisco and cisco_person and cisco_person.status != 'unknown':
-		add_item(wf, "Direct message",'Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+		add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
 
 	# Add copy email and paste
 	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")

@@ -6,7 +6,7 @@ import os
 import json
 import urllib
 
-from workflow import Workflow, web, ICON_INFO
+from workflow import Workflow3, web, ICON_INFO
 
 log = None
 
@@ -42,6 +42,7 @@ def main(wf):
     ciscospark = False
     whatsapp = False
     sametimechat = True
+    officephone = False
 
     # Check status
     if wf.stored_data('bp-imessage'):
@@ -58,6 +59,9 @@ def main(wf):
     if wf.stored_data('bp-whatsapp'):
         whatsapp = wf.stored_data('bp-whatsapp').lower().strip() \
             in ('yes', 'true', '1', 'on', 'yeah')
+    if wf.stored_data('bp-officephone'):
+        officephone = wf.stored_data('bp-officephone').lower().strip() \
+            in ('yes', 'true', '1', 'on', 'yeah')
 
     if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
         pushbullet = True
@@ -65,6 +69,8 @@ def main(wf):
         sut = wf.stored_data('bp-sut').lower().strip() \
             in ('yes', 'true', '1', 'on', 'yeah')
 
+    add_item(wf, 'Re-order actions', 'Change order of appearance on actions', ''
+             , 'reorder')
     add_item(wf, 'Sametime '+('ENABLED' if sametimechat else 'DISABLED'), 'Toggle Sametime', ''
              , 'sametime','images/st.png')
     add_item(wf, 'Sametime Unified Telephony '+('ENABLED' if sut else 'DISABLED'), 'Toggle SUT (call with Sametime)', ''
@@ -84,6 +90,9 @@ def main(wf):
     add_item(wf, 'Cisco Spark '+('ENABLED' if ciscospark else 'DISABLED'),
              'Toggle Cisco Spark integration (messages)', '',
              'ciscospark','images/ciscospark.png')
+    add_item(wf, 'Hide Office phone '+('ENABLED' if officephone else 'DISABLED'),
+             'Hides office phone options if mobile is available', '',
+             'officephone','images/office.png')
     add_item(wf, 'Link to Mac@IBM forum',
              'Ask questions or report bugs', 'https://w3-connections.ibm.com/forums/html/topic?id=efeae0bf-3d7e-48a2-8573-b31f940c111b',
              'url')
@@ -98,7 +107,7 @@ if __name__ == '__main__':
 
     # Create a global `Workflow` object
 
-    wf = Workflow(update_settings={'github_slug': 'nidayand/alfr-bp',
+    wf = Workflow3(update_settings={'github_slug': 'nidayand/alfr-bp',
                   'frequency': 1})  # Your username and the workflow's repo's name
 
                                     # Optional number of days between checks for updates

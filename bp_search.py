@@ -9,7 +9,7 @@ import urllib2
 import time
 import re
 
-from workflow import Workflow, web, ICON_INFO, ICON_ERROR,ICON_NOTE
+from workflow import Workflow3, web, ICON_INFO, ICON_ERROR,ICON_NOTE
 
 log = None
 
@@ -123,7 +123,7 @@ def main(wf):
 
 if __name__ == '__main__':
     # Create a global `Workflow` object
-    wf = Workflow(update_settings={
+    wf = Workflow3(update_settings={
             # Your username and the workflow's repo's name
             'github_slug': 'nidayand/alfr-bp',
 

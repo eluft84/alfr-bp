@@ -10,12 +10,29 @@ import re
 import urllib2
 import time
 from ciscosparkapi import CiscoSparkAPI
-from workflow import Workflow, web
+from workflow import Workflow3, web
 from datetime import tzinfo, timedelta, datetime
 import dateutil.parser
 
 log = None
 ZERO = timedelta(0)
+
+default_order = order = ['profile', 'verse', 'sametimechat', 'sametimesut', 'facetime', 'messages', 'whatsapp', 'pushbullet', 'ciscospark', 'copy', 'paste', 'save']
+def getorder():
+	if wf.stored_data('bp-order'):
+		order = wf.stored_data('bp-order')
+
+		# Verify that there are no options missing in order list
+		for a in default_order:
+			if a not in order:
+				order.append(a)
+				wf.store_data('bp-order', order)
+		return order
+	else:
+		wf.store_data('bp-order', default_order)
+		return default_order
+
+
 class UTC(tzinfo):
 	def utcoffset(self, dt):
 		return ZERO
@@ -71,11 +88,77 @@ def clean_number(nbr, plus = False, withoutzero = False):
 	else:
 		return "00"+out
 
+def add_mail(wf,item):
+	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
+
+def add_sametimechat(wf, item):
+	try:
+		r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
+		r = r.json()
+
+		# Add chat
+		if r["status"]>0:
+			add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
+	except:
+		pass
+
+def add_sametimesut(wf, item, hideoffice):
+	try:
+		web.get('http://localhost:59449/stwebapi/call')
+
+		if item.get("telephone_mobile"):
+			add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
+
+		if item.get("telephone_office") and not hideoffice or not item.get("telephone_mobile"):
+			add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
+	except:
+		pass
+
+def add_facetime(wf, item, hideoffice):
+	if item.get("telephone_mobile"):
+		add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
+
+	if item.get("telephone_office") and not hideoffice or not item.get("telephone_mobile"):
+		add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
+
+
+def add_pushbullet(wf,item):
+	if item.get("telephone_mobile"):
+		add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Pushbullet', clean_number(item["telephone_mobile"], True), "pushbullet", "images/pushbullet.png")
+
+def add_imessage(wf, item):
+	if item.get("telephone_mobile"):
+		add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "images/imessage.png")
+
+def add_whatsapp(wf,item):
+	if item.get("telephone_mobile"):
+		add_item(wf, 'Chat with '+item["nameFull"], 'Using WhatsApp', "https://web.whatsapp.com/send?phone="+urllib.quote(clean_number(item["telephone_mobile"], False, True)), "browser", "images/whatsapp.png")
+
+def add_cisco(wf, item, cisco_person):
+	# Get time
+	lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
+	now = datetime.now(UTC())
+	d = datetime(1,1,1) + (now - lastActivity)
+	txt = 'Active '
+	if (d.day-1) > 1:
+		txt += str(d.day-1) + ' days ago'
+	elif (d.day-1) > 0:
+		txt += str(d.day-1) + ' day ago'
+	elif d.hour > 1:
+		txt += str(d.hour) + ' hours ago'
+	elif d.hour > 0:
+		txt += str(d.hour) + ' hour ago'
+	elif d.minute > 1:
+		txt += str(d.minute) + ' minutes ago'
+	elif d.minute > 0:
+		txt += str(d.minute) + ' minute ago'
+
+	add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark ('+txt+')',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+
 
 def main(wf):
 	# https://github.com/deanishe/alfred-workflow
 	# http://www.deanishe.net/alfred-workflow/
-	args = wf.args
 
 	item = json.loads(os.environ['item'])
 
@@ -85,7 +168,7 @@ def main(wf):
 	except:
 		item["added_timestamp"] = time.time()
 
-	#Add item to store
+	# Add item to store
 	items = wf.stored_data('items')
 	if items:
 		#Check if it already exists and if so remove
@@ -104,12 +187,6 @@ def main(wf):
 		items.pop()
 	wf.store_data('items',items, serializer='json')
 
-	# Add profile
-	add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
-
-	# Add mail
-	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
-
 	# Initializing params
 	phone_duplicates = False
 	imessage = False
@@ -118,6 +195,7 @@ def main(wf):
 	pushbullet = False
 	whatsapp = False
 	sametimechat = True
+	hideoffice = False
 
 	# Sametime
 	if wf.stored_data('bp-sametimechat'):
@@ -144,6 +222,10 @@ def main(wf):
 	if wf.stored_data('bp-device') and wf.stored_data('bp-api'):
 		pushbullet = True
 
+	#Hide office
+	if wf.stored_data('bp-officephone'):
+		hideoffice = wf.stored_data('bp-officephone').lower().strip() in ('yes', 'true', '1', 'on', 'yeah')
+
 	# Cisco Spark
 	cisco = False
 	cisco_person = None
@@ -159,99 +241,74 @@ def main(wf):
 
 	# Check if the office and mobile are the same number
 	if item.get("telephone_mobile") and item.get("telephone_office") and (clean_number(item.get("telephone_mobile")) == clean_number(item.get("telephone_office"))):
-		phone_duplicates = True
-	else:
-		phone_duplicates = False
+		# Remove office phone if mobile is the same
+		del item["telephone_office"]
 
-	# Sametime features
-	if sametimechat:
-		try:
-			try:
-				r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
-				r = r.json()
+	# CREATE THE ORDERED LIST
+	order = getorder()
 
-				# Add chat
-				if r["status"]>0:
-					add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
-			except:
-				pass
+	for i in order:
+		if i == 'profile':
+			# Add profile (will always be at top)
+			add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
 
-			r = web.get('http://localhost:59449/stwebapi/call')
+		elif i == 'sametimechat':
+			# Sametime chat
+			if sametimechat:
+				add_sametimechat(wf,item)
 
-			if sut and item.get("telephone_mobile"):
-				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_mobile"])), "urlcall", "images/mobile.png")
-			if facetime and item.get("telephone_mobile"):
-				add_item(wf, 'Call mobile: +'+item["telephone_mobile"], 'Using FaceTime', clean_number(item["telephone_mobile"], True), "facetime", "images/facetime.png")
+		elif i == 'sametimesut':
+			# Sametime SUT
+			if sut:
+				add_sametimesut(wf, item, hideoffice)
 
-			if sut and item.get("telephone_office") and  not phone_duplicates:
-				add_item(wf, 'Call office: +'+item["telephone_office"], 'Using Sametime Unified Telephony', "http://localhost:59449/stwebapi/call?number="+urllib.quote(clean_number(item["telephone_office"])), "urlcall", "images/office.png")
-			if facetime and item.get("telephone_office") and  not phone_duplicates:
-				add_item(wf, 'Call office: +'+item["telephone_office"], 'Using FaceTime', clean_number(item["telephone_office"], True), "facetime", "images/facetime.png")
-		except:
-			pass
+		elif i == 'facetime':
+			# FaceTime
+			if facetime:
+				add_facetime(wf, item, hideoffice)
 
-	#Pushbullet
-	if pushbullet:
-		if item.get("telephone_mobile"):
-			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Pushbullet', clean_number(item["telephone_mobile"], True), "pushbullet", "images/pushbullet.png")
-		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Pushbullet', clean_number(item["telephone_office"], True), "pushbullet", "images/pushbullet.png")
+		elif i == 'messages':
+			#iPhone SMS
+			if imessage:
+				add_imessage(wf,item)
 
-	#iPhone SMS
-	if imessage:
-		if item.get("telephone_mobile"):
-			add_item(wf, 'Text mobile: +'+item["telephone_mobile"], 'Using Messages', clean_number(item["telephone_mobile"], True), "imessage", "images/imessage.png")
-		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Text office: +'+item["telephone_office"], 'Using Messages', clean_number(item["telephone_office"], True), "imessage", "images/imessage.png")
+		elif i == 'whatsapp':
+			#WhatsApp
+			if whatsapp:
+				add_whatsapp(wf,item)
 
-	#WhatsApp
-	if whatsapp:
-		if item.get("telephone_mobile"):
-			add_item(wf, 'Chat with '+item["nameFull"], 'Using WhatsApp', "https://api.whatsapp.com/send?phone="+urllib.quote(clean_number(item["telephone_mobile"], False, True)), "browser", "images/whatsapp.png")
+		elif i == 'pushbullet':
+			#Pushbullet
+			if pushbullet:
+				add_pushbullet(wf, item)
 
-	#Cisco Spark
-	if cisco and cisco_person and cisco_person.status != 'unknown':
-		# Get time
-		lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
-		now = datetime.now(UTC())
-		d = datetime(1,1,1) + (now - lastActivity)
-		txt = 'Active '
-		if (d.day-1) > 1:
-			txt += str(d.day-1) + ' days ago'
-		elif (d.day-1) > 0:
-			txt += str(d.day-1) + ' day ago'
-		elif d.hour > 1:
-			txt += str(d.hour) + ' hours ago'
-		elif d.hour > 0:
-			txt += str(d.hour) + ' hour ago'
-		elif d.minute > 1:
-			txt += str(d.minute) + ' minutes ago'
-		elif d.minute > 0:
-			txt += str(d.minute) + ' minute ago'
+		elif i == 'ciscospark':
+			#Cisco Spark
+			if cisco and cisco_person and cisco_person.status != 'unknown':
+				add_cisco(wf,item, cisco_person)
 
-		add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark ('+txt+')',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+		elif i == 'copy':
+			# Add copy email to clipboard
+			add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"].lower(), "clipboard", "images/clipboard.png")
 
-	# Add copy email and paste
-	add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")
+			# Add copy mobile to clipboard
+			if item.get("telephone_mobile"):
+				add_item(wf, 'Copy mobile: +'+item["telephone_mobile"], 'To clipboard', clean_number(item["telephone_mobile"], True), "clipboard", "images/clipboard.png")
 
-	# Add copy email to clipboard
-	add_item(wf, 'Copy '+item["preferredIdentity"].lower(), 'To clipboard', item["preferredIdentity"].lower(), "clipboard", "images/clipboard.png")
+			# Add copy office to clipboard
+			if item.get("telephone_office") and not hideoffice or not item.get("telephone_mobile"):
+				add_item(wf, 'Copy office: +'+item["telephone_office"], 'To clipboard', clean_number(item["telephone_office"], True), "clipboard", "images/clipboard.png")
 
-	# Add copy mobile to clipboard
-	try:
-		if item.get("telephone_mobile"):
-			add_item(wf, 'Copy mobile: +'+item["telephone_mobile"], 'To clipboard', clean_number(item["telephone_mobile"], True), "clipboard", "images/clipboard.png")
-	except:
-		pass
-	# Add copy office to clipboard
-	try:
-		if item.get("telephone_office") and not phone_duplicates:
-			add_item(wf, 'Copy office: +'+item["telephone_office"], 'To clipboard', clean_number(item["telephone_office"], True), "clipboard", "images/clipboard.png")
-	except:
-		pass
+		elif i == 'paste':
+			# Add copy email and paste
+			add_item(wf, 'Paste '+item["preferredIdentity"].lower(), 'To the front most app and copy to clipboard', item["preferredIdentity"].lower(), "paste", "images/paste.png")
 
-	add_item(wf, "Save", "Store profile in Contacts", "","save", "images/contacts.png")
+		elif i == 'save':
+			add_item(wf, "Save", "Store profile in Contacts", "","save", "images/contacts.png")
 
+		elif i == 'verse':
+			# Add mail
+			add_mail(wf,item)
 
 	# Send output to Alfred. You can only call this once.
 	# Well, you *can* call it multiple times, but Alfred won't be listening	# any more...
@@ -260,7 +317,7 @@ def main(wf):
 
 if __name__ == '__main__':
 	# Create a global `Workflow` object
-	wf = Workflow()
+	wf = Workflow3()
 	log = wf.logger
 	# Call your entry function via `Workflow.run()` to enable its helper
 	# functions, like exception catching, ARGV normalization, magic

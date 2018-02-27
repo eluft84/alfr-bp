@@ -9,8 +9,9 @@ import urllib
 import re
 import urllib2
 import time
-from ciscosparkapi import CiscoSparkAPI
+import ciscosparkapi
 from workflow import Workflow3, web
+from workflow.background import run_in_background, is_running
 from datetime import tzinfo, timedelta, datetime
 import dateutil.parser
 
@@ -67,9 +68,9 @@ def thumbnail_cache_exists(uid):
 			return True
 	return False
 
-def add_item(wf, atitle, asubtitle, aquery, aaction, aicon = None):
+def add_item(wf, atitle, asubtitle, aquery, aaction, aicon = None, avalid=True):
 	arg = {"alfredworkflow": {"arg": aquery,"variables": {"action": aaction}}}
-	wf.add_item(title=atitle, subtitle=asubtitle, arg=json.dumps(arg), valid='True', icon=(aicon if aicon else ""))
+	wf.add_item(title=atitle, subtitle=asubtitle, arg=json.dumps(arg), valid=avalid, icon=(aicon if aicon else ""))
 
 def clean_number(nbr, plus = False, withoutzero = False):
 	out = nbr.replace(" ", "")
@@ -134,26 +135,35 @@ def add_whatsapp(wf,item):
 	if item.get("telephone_mobile"):
 		add_item(wf, 'Chat with '+item["nameFull"], 'Using WhatsApp', "https://web.whatsapp.com/send?phone="+urllib.quote(clean_number(item["telephone_mobile"], False, True)), "browser", "images/whatsapp.png")
 
-def add_cisco(wf, item, cisco_person):
-	# Get time
-	lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
-	now = datetime.now(UTC())
-	d = datetime(1,1,1) + (now - lastActivity)
-	txt = 'Active '
-	if (d.day-1) > 1:
-		txt += str(d.day-1) + ' days ago'
-	elif (d.day-1) > 0:
-		txt += str(d.day-1) + ' day ago'
-	elif d.hour > 1:
-		txt += str(d.hour) + ' hours ago'
-	elif d.hour > 0:
-		txt += str(d.hour) + ' hour ago'
-	elif d.minute > 1:
-		txt += str(d.minute) + ' minutes ago'
-	elif d.minute > 0:
-		txt += str(d.minute) + ' minute ago'
+def add_cisco(wf, item):
+	if is_running('update-cisco'):
+		add_item(wf, 'Checking status','Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png', False)
+		wf.rerun = 1
+	else:
+		cisco_person = wf.cached_data('cisco-person',max_age=10)
+		cisco_person = ciscosparkapi.Person(cisco_person)
+		if not cisco_person.status in ['unknown','pending']:
+			# Get time
+			lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
+			now = datetime.now(UTC())
+			d = datetime(1,1,1) + (now - lastActivity)
+			txt = 'Active '
+			if (d.day-1) > 1:
+				txt += str(d.day-1) + ' days ago'
+			elif (d.day-1) > 0:
+				txt += str(d.day-1) + ' day ago'
+			elif d.hour > 1:
+				txt += str(d.hour) + ' hours ago'
+			elif d.hour > 0:
+				txt += str(d.hour) + ' hour ago'
+			elif d.minute > 1:
+				txt += str(d.minute) + ' minutes ago'
+			elif d.minute > 0:
+				txt += str(d.minute) + ' minute ago'
 
-	add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark ('+txt+')',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+			add_item(wf, 'Chat with '+item["nameFull"],'Using Cisco Spark ('+txt+')',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png')
+		else:
+			add_item(wf, 'Not available','Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png', False)
 
 
 def main(wf):
@@ -228,15 +238,11 @@ def main(wf):
 
 	# Cisco Spark
 	cisco = False
-	cisco_person = None
 	if wf.stored_data('bp-cisco'):
-		cisco = CiscoSparkAPI(access_token=wf.stored_data('bp-cisco'))
-
-		# Should only get one hit
-		l = cisco.people.list(email=item["preferredIdentity"].lower())
-		for p in l:
-			cisco_person = p
-			log.debug(p)
+		cisco = True
+		#cisco_persion = wf.cached_data('cisco-person', None, max_age=0)
+		if not wf.cached_data_fresh('cisco-person', max_age=5):
+			run_in_background('update-cisco', ['/usr/bin/python', wf.workflowfile('bp_bg_cisco.py'),item['preferredIdentity']])
 
 
 	# Check if the office and mobile are the same number
@@ -284,8 +290,8 @@ def main(wf):
 
 		elif i == 'ciscospark':
 			#Cisco Spark
-			if cisco and cisco_person and cisco_person.status != 'unknown':
-				add_cisco(wf,item, cisco_person)
+			if cisco:
+				add_cisco(wf,item)
 
 		elif i == 'copy':
 			# Add copy email to clipboard

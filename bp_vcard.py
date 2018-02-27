@@ -37,6 +37,10 @@ def main(wf):
 
     item = json.loads(os.environ['item'])
 
+    if item.get("telephone_mobile") and item.get("telephone_office") and (clean_number(item.get("telephone_mobile")) == clean_number(item.get("telephone_office"))):
+        # Remove office phone if mobile is the same
+        del item["telephone_office"]
+
     url = \
         'https://w3-services1.w3-969.ibm.com/myw3/unified-profile/v1/docs/instances/master?userId=' \
         + item['uid'] + '&_=1511950277764'

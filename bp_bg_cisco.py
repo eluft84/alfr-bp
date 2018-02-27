@@ -4,7 +4,6 @@ from workflow import Workflow3
 from ciscosparkapi import CiscoSparkAPI
 import ciscosparkapi
 import logging
-from time import sleep
 
 
 def get_people(wf, email):

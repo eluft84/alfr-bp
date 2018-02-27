@@ -93,15 +93,16 @@ def add_mail(wf,item):
 	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
 
 def add_sametimechat(wf, item):
-	try:
-		r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(item["preferredIdentity"]), timeout=5)
-		r = r.json()
-
+	if is_running('update-sametimechat'):
+		add_item(wf, 'Checking status','Using Sametime chat',None,None,'images/st.png', False)
+		wf.rerun = 1
+	else:
+		r = wf.cached_data('sametimechat-person',max_age=10)
 		# Add chat
 		if r["status"]>0:
 			add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
-	except:
-		pass
+		else:
+			add_item(wf, 'Not available','Using Sametime chat',None,None,'images/st.png', False)
 
 def add_sametimesut(wf, item, hideoffice):
 	try:
@@ -210,6 +211,9 @@ def main(wf):
 	# Sametime
 	if wf.stored_data('bp-sametimechat'):
 		sametimechat = wf.stored_data('bp-sametimechat').lower().strip() in ("yes", "true", "1", "on", "yeah")
+		if sametimechat:
+			if not wf.cached_data_fresh('sametimechat-person', max_age=5):
+				run_in_background('update-sametimechat', ['/usr/bin/python', wf.workflowfile('bp_bg_sametimechat.py'),item['preferredIdentity']])
 
 	#iPhone
 	if wf.stored_data('bp-imessage'):
@@ -240,7 +244,6 @@ def main(wf):
 	cisco = False
 	if wf.stored_data('bp-cisco'):
 		cisco = True
-		#cisco_persion = wf.cached_data('cisco-person', None, max_age=0)
 		if not wf.cached_data_fresh('cisco-person', max_age=5):
 			run_in_background('update-cisco', ['/usr/bin/python', wf.workflowfile('bp_bg_cisco.py'),item['preferredIdentity']])
 

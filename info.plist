@@ -1386,7 +1386,7 @@ if __name__ == '__main__':
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<true/>
+				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttrimmode</key>
@@ -1406,9 +1406,9 @@ if __name__ == '__main__':
 				<key>runningsubtext</key>
 				<string>Please wait</string>
 				<key>script</key>
-				<string>python bp_item.py</string>
+				<string>python bp_item.py {query}</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
@@ -3445,7 +3445,7 @@ You can also update the workflow with an Hotkey to search Bluepages on any selec
 		<key>04A33F4D-BE17-437E-91F9-795AC11D5063</key>
 		<dict>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>730</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>

@@ -20,18 +20,8 @@ def main(wf):
     args = wf.args
     query = args[0]
 
-    # Retrieve posts from cache if available and no more than 600
-    # seconds old
-
-    def wrapper():
-        """`cached_data` can only take a bare callable (no args),
-        so we need to wrap callables needing arguments in a function
-        that needs none.
-        """
-        return get_people(wf, query)
-
-    wf.cached_data('cisco-person', wrapper, max_age=2)
-
+    val = get_people(wf, query)
+    wf.store_data('cisco-person', val, serializer='json')
 
 if __name__ == '__main__':
     wf = Workflow3()

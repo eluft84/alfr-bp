@@ -89,6 +89,15 @@ def clean_number(nbr, plus = False, withoutzero = False):
 	else:
 		return "00"+out
 
+def add_person(wf, item):
+	if is_running('update-outofoffice'):
+		add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
+		wf.rerun = 1
+	else:
+		r = wf.stored_data('outofoffice-person')
+		add_item(wf, 'Show profile of '+item["nameFull"]+ (' (out of office)' if r['enabled'] else '') , 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
+
+
 def add_mail(wf,item):
 	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
 
@@ -97,7 +106,7 @@ def add_sametimechat(wf, item):
 		add_item(wf, 'Checking status','Using Sametime chat',None,None,'images/st.png', False)
 		wf.rerun = 1
 	else:
-		r = wf.cached_data('sametimechat-person',max_age=10)
+		r = wf.stored_data('sametimechat-person')
 		# Add chat
 		if r["status"]>0:
 			add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
@@ -141,7 +150,7 @@ def add_cisco(wf, item):
 		add_item(wf, 'Checking status','Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png', False)
 		wf.rerun = 1
 	else:
-		cisco_person = wf.cached_data('cisco-person',max_age=10)
+		cisco_person = wf.stored_data('cisco-person')
 		cisco_person = ciscosparkapi.Person(cisco_person)
 		if not cisco_person.status in ['unknown','pending']:
 			# Get time
@@ -168,10 +177,15 @@ def add_cisco(wf, item):
 
 
 def main(wf):
-	# https://github.com/deanishe/alfred-workflow
-	# http://www.deanishe.net/alfred-workflow/
-
 	item = json.loads(os.environ['item'])
+
+	# This is set in bp_search initially and firsttime param
+	# is used for the refresh functions
+	firsttime = False
+	if wf.stored_data('first-time'):
+		firsttime = True
+		wf.clear_data(lambda f: f.endswith('first-time.cpickle'))
+
 
 	# Add timestamp to item if it doesn't exist
 	try:
@@ -208,12 +222,15 @@ def main(wf):
 	sametimechat = True
 	hideoffice = False
 
+	# Check out of office
+	if firsttime:
+		run_in_background('update-outofoffice', ['/usr/bin/python', wf.workflowfile('bp_bg_outofoffice.py'),item['uid']])
+
 	# Sametime
 	if wf.stored_data('bp-sametimechat'):
 		sametimechat = wf.stored_data('bp-sametimechat').lower().strip() in ("yes", "true", "1", "on", "yeah")
-		if sametimechat:
-			if not wf.cached_data_fresh('sametimechat-person', max_age=5):
-				run_in_background('update-sametimechat', ['/usr/bin/python', wf.workflowfile('bp_bg_sametimechat.py'),item['preferredIdentity']])
+		if sametimechat and firsttime:
+			run_in_background('update-sametimechat', ['/usr/bin/python', wf.workflowfile('bp_bg_sametimechat.py'),item['preferredIdentity']])
 
 	#iPhone
 	if wf.stored_data('bp-imessage'):
@@ -244,7 +261,7 @@ def main(wf):
 	cisco = False
 	if wf.stored_data('bp-cisco'):
 		cisco = True
-		if not wf.cached_data_fresh('cisco-person', max_age=5):
+		if firsttime:
 			run_in_background('update-cisco', ['/usr/bin/python', wf.workflowfile('bp_bg_cisco.py'),item['preferredIdentity']])
 
 
@@ -258,8 +275,7 @@ def main(wf):
 
 	for i in order:
 		if i == 'profile':
-			# Add profile (will always be at top)
-			add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
+			add_person(wf, item)
 
 		elif i == 'sametimechat':
 			# Sametime chat

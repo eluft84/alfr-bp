@@ -40,6 +40,9 @@ def main(wf):
 
     query = args[0]
 
+    # Set first-time variable for bp_item.py
+    wf.store_data('first-time',1)
+
     counter = 0
 
     #If there is an update prompt for updating action

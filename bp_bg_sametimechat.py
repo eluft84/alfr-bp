@@ -17,17 +17,9 @@ def main(wf):
     args = wf.args
     query = args[0]
 
-    # Retrieve posts from cache if available and no more than 600
-    # seconds old
+    val = get_people(wf, query)
 
-    def wrapper():
-        """`cached_data` can only take a bare callable (no args),
-        so we need to wrap callables needing arguments in a function
-        that needs none.
-        """
-        return get_people(wf, query)
-
-    wf.cached_data('sametimechat-person', wrapper, max_age=2)
+    wf.store_data('sametimechat-person', val, serializer='json')
 
 
 if __name__ == '__main__':

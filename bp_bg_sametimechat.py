@@ -10,7 +10,7 @@ def get_people(wf, email):
         r = web.get("http://localhost:59449/stwebapi/getstatus?userId="+urllib.quote(email), timeout=5)
         return r.json()
     except:
-        return '{"status":0}'
+        return {"status":0}
 
 
 def main(wf):

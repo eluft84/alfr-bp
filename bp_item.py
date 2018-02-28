@@ -321,7 +321,7 @@ def main(wf):
 				add_item(wf, 'Copy mobile: +'+item["telephone_mobile"], 'To clipboard', clean_number(item["telephone_mobile"], True), "clipboard", "images/clipboard.png")
 
 			# Add copy office to clipboard
-			if item.get("telephone_office") and not hideoffice or not item.get("telephone_mobile"):
+			if item.get("telephone_office") and not hideoffice or not item.get("telephone_mobile") and item.get("telephone_office"):
 				add_item(wf, 'Copy office: +'+item["telephone_office"], 'To clipboard', clean_number(item["telephone_office"], True), "clipboard", "images/clipboard.png")
 
 		elif i == 'paste':

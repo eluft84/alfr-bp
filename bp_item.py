@@ -95,7 +95,10 @@ def add_person(wf, item):
 		wf.rerun = 1
 	else:
 		r = wf.stored_data('outofoffice-person')
-		add_item(wf, 'Show profile of '+item["nameFull"]+ (' (out of office)' if r['enabled'] else '') , 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
+		if r:
+			add_item(wf, 'Show profile of '+item["nameFull"]+ (' (out of office)' if r['enabled'] else '') , 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
+		else:
+			add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
 
 
 def add_mail(wf,item):
@@ -108,7 +111,7 @@ def add_sametimechat(wf, item):
 	else:
 		r = wf.stored_data('sametimechat-person')
 		# Add chat
-		if r["status"]>0:
+		if r and r.get("status") and r["status"]>0:
 			add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
 		else:
 			add_item(wf, 'Not available','Using Sametime chat',None,None,'images/st.png', False)
@@ -151,8 +154,14 @@ def add_cisco(wf, item):
 		wf.rerun = 1
 	else:
 		cisco_person = wf.stored_data('cisco-person')
-		cisco_person = ciscosparkapi.Person(cisco_person)
-		if not cisco_person.status in ['unknown','pending']:
+		status = False
+		try:
+			cisco_person = ciscosparkapi.Person(cisco_person)
+			status = cisco_person.status
+		except:
+			pass
+
+		if status and not status in ['unknown','pending']:
 			# Get time
 			lastActivity = dateutil.parser.parse(cisco_person.lastActivity)
 			now = datetime.now(UTC())
@@ -186,6 +195,9 @@ def main(wf):
 		firsttime = True
 		wf.clear_data(lambda f: f.endswith('first-time.cpickle'))
 
+		# Clear old backend data
+		wf.clear_data(lambda f: f.endswith('-person.cpickle'))
+		wf.clear_data(lambda f: f.endswith('-person.json'))
 
 	# Add timestamp to item if it doesn't exist
 	try:

@@ -92,7 +92,6 @@ def clean_number(nbr, plus = False, withoutzero = False):
 def add_person(wf, item):
 	if is_running('update-outofoffice'):
 		add_item(wf, 'Show profile of '+item["nameFull"], 'Open in default browser', "http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"], "browser", get_thumbnail(item["uid"]))
-		wf.rerun = 1
 	else:
 		r = wf.stored_data('outofoffice-person')
 		if r:
@@ -107,13 +106,13 @@ def add_mail(wf,item):
 def add_sametimechat(wf, item):
 	if is_running('update-sametimechat'):
 		add_item(wf, 'Checking status','Using Sametime chat',None,None,'images/st.png', False)
-		wf.rerun = 1
 	else:
 		r = wf.stored_data('sametimechat-person')
 		# Add chat
 		if r and r.get("status") and r["status"]>0:
 			add_item(wf, 'Chat with '+item["nameFull"], 'Status: '+r["statusMessage"], "http://localhost:59449/stwebapi/chat?userId="+urllib.quote(item["preferredIdentity"]), "urlcall", "images/st.png")
 		else:
+			log.debug(r)
 			add_item(wf, 'Not available','Using Sametime chat',None,None,'images/st.png', False)
 
 def add_sametimesut(wf, item, hideoffice):
@@ -151,7 +150,6 @@ def add_whatsapp(wf,item):
 def add_cisco(wf, item):
 	if is_running('update-cisco'):
 		add_item(wf, 'Checking status','Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png', False)
-		wf.rerun = 1
 	else:
 		cisco_person = wf.stored_data('cisco-person')
 		status = False
@@ -346,6 +344,15 @@ def main(wf):
 		elif i == 'verse':
 			# Add mail
 			add_mail(wf,item)
+
+	# Rerun if there is a background process running
+	if is_running('update-sametimechat') or \
+		is_running('update-outofoffice') or \
+		is_running('update-cisco'):
+		wf.rerun = 1.5
+	else:
+		# Delete the data from disk
+		wf.clear_data(lambda f: f.endswith('-person.json'))
 
 	# Send output to Alfred. You can only call this once.
 	# Well, you *can* call it multiple times, but Alfred won't be listening	# any more...

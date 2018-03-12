@@ -103,8 +103,8 @@ def add_person(wf, item):
 def add_mail(wf,item):
 	add_item(wf, 'Send mail to '+item["preferredIdentity"].lower(), 'Open IBM Verse', "https://mail.notes.na.collabserv.com/verse?mode=compose#href=mailto%3A"+urllib.quote(item["preferredIdentity"].lower()), "browser", "images/verse.png")
 
-def add_sametimechat(wf, item):
-	if is_running('update-sametimechat'):
+def add_sametimechat(wf, item, firsttime):
+	if is_running('update-sametimechat') or firsttime:
 		add_item(wf, 'Checking status','Using Sametime chat',None,None,'images/st.png', False)
 	else:
 		r = wf.stored_data('sametimechat-person')
@@ -147,8 +147,8 @@ def add_whatsapp(wf,item):
 	if item.get("telephone_mobile"):
 		add_item(wf, 'Chat with '+item["nameFull"], 'Using WhatsApp', "https://web.whatsapp.com/send?phone="+urllib.quote(clean_number(item["telephone_mobile"], False, True)), "browser", "images/whatsapp.png")
 
-def add_cisco(wf, item):
-	if is_running('update-cisco'):
+def add_cisco(wf, item, firsttime):
+	if is_running('update-cisco') or firsttime:
 		add_item(wf, 'Checking status','Using Cisco Spark',item["preferredIdentity"].lower(),'ciscospark','images/ciscospark.png', False)
 	else:
 		cisco_person = wf.stored_data('cisco-person')
@@ -290,7 +290,7 @@ def main(wf):
 		elif i == 'sametimechat':
 			# Sametime chat
 			if sametimechat:
-				add_sametimechat(wf,item)
+				add_sametimechat(wf,item, firsttime)
 
 		elif i == 'sametimesut':
 			# Sametime SUT
@@ -320,7 +320,7 @@ def main(wf):
 		elif i == 'ciscospark':
 			#Cisco Spark
 			if cisco:
-				add_cisco(wf,item)
+				add_cisco(wf,item, firsttime)
 
 		elif i == 'copy':
 			# Add copy email to clipboard

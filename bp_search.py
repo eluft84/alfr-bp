@@ -13,10 +13,21 @@ from workflow import Workflow3, web, ICON_INFO, ICON_ERROR,ICON_NOTE
 
 log = None
 
-def get_thumbnail(uid):
+def get_thumbnail(uid, getnewimage=False):
     filename = wf.datadir + '/cached/{0}.jpg'.format(uid)
     if thumbnail_cache_exists(uid) is True:
         return filename
+    elif getnewimage:
+        # Try to get a copy
+        try:
+            img = urllib2.urlopen('https://w3-services1.w3-969.ibm.com/myw3/unified-profile-photo/v1/image/{0}?def=blue&s=64'.format(uid))
+            localFile = open(filename, 'wb')
+            localFile.write(img.read())
+            localFile.close()
+            return filename
+        except:
+            return wf.workflowdir+"/icon.png"
+            pass
     else:
         return wf.workflowdir+"/icon.png"
 
@@ -106,11 +117,15 @@ def main(wf):
             log.debug("Calling: "+url)
             r = web.get(url).json()
 
+            # image counter. Get top 3 results
+            imagecounter = 0
+
             for item in r["results"]:
                 #Only add if UID not is in the cached hit list and it has an email
                 if item["uid"] not in uidhitlist and item.get("preferredIdentity") and "FUNCTIONAL-ID" not in item["nameFull"]:
-                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"]))
+                    wf.add_item(title=item["nameFull"], subtitle=(item["role"] if item.get("role") else ""), autocomplete=item["nameFull"], arg=json.dumps(item), valid=True, quicklookurl=("http://w3.ibm.com/bluepages/profile.html?uid="+item["uid"]), icon=get_thumbnail(item["uid"], True if imagecounter < 3 else False))
                     counter+=1
+                    imagecounter+=1
     except:
         wf.add_item(title="Unable to reach Bluepages", subtitle="Please verify that you are connected to the IBM Intranet", valid=False, icon=ICON_ERROR)
         pass
